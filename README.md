@@ -1,4 +1,4 @@
-halo
+halo informasi anggota
 
 1	I Ketut Dharmawan |	Ilmu Komputer | wan
 
