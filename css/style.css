@@ -1,0 +1,108 @@
+:root{
+    /* Tema Warna*/
+  --bg:#0a0d14;
+  --panel:#121722;
+  --line:#232b3b;
+  
+  --text:#e7ecf5;
+  --mute:#8d99b0;
+
+  --c0:#58a6ff;
+  --c1:#ff7b72;
+  --c2:#f2cc60;
+  --c3:#7ee787;
+  --c4:#d2a8ff;
+  --nav-h:64px;
+
+  color-scheme:dark;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    /* tinggi dummy supaya sticky bisa dicoba saat scroll */
+    min-height: 200vh;
+}
+
+.layout {
+    max-width: auto;
+    padding-inline: 8em;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff; /* perlu background agar konten di bawah tidak tembus */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 1.5em 8em;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Tombol hamburger (disembunyikan di desktop) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+    .nav-toggle {
+    display: block;
+    }
+
+    .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-links.open {
+    display: flex;
+    }
+
+    .nav-links a {
+    display: block;
+    padding: 14px 16px;
+    }
+}
