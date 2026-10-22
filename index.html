@@ -7,22 +7,27 @@
     <title>Branch</title>
 </head>
 <body>
-    <header class="navbar">
-            <nav class="navbar-inner">
-            <a href="#" class="logo">Logo</a>
-        
-            <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">&#9776;</button>
-        
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#services">Layanan</a></li>
-                <li><a href="#contact">Kontak</a></li>
+    <!-- === NAVBAR === -->
+    <header class="nav" id="nav">
+        <div class="container">
+            <a href="#home" class="logo">Branch<span>Team</span></a>
+            <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="links">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+            <nav aria-label="Navigasi utama">
+            <ul class="links" id="links">
+                <li><a href="#home">beranda</a></li>
+                <li><a href="#about">tentang branch</a></li>
+                <li><a href="#our-team">anggota</a></li>
+                <li><a href="#page">page kami</a></li>
             </ul>
-        </nav>
+            </nav>
+        </div>
+        <div class="bar" id="bar" aria-hidden="true"></div>
     </header>
 
-    <main class="layout">
+    <!-- === HERO === -->
+    <main class="container" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <h1>Kenalkan kelompok branch</h1>
         <ul>
             <li>I Ketut Dharmawan | Ilkom</li>
