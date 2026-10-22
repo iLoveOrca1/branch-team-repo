@@ -1,0 +1,83 @@
+/* ===== Navbar ===== */
+.nav {
+    position:fixed;
+    inset:0 0 auto 0;
+    z-index:50;
+    height:calc(var(--nav-h) + env(safe-area-inset-top,0px));
+    padding-top:env(safe-area-inset-top,0px);
+  background:rgba(10,13,20,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+
+.nav.scrolled {
+    border-bottom-color:var(--line)
+}
+
+.nav .container {
+    height:var(--nav-h);
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    gap:16px
+}
+
+.logo {
+    font: 800 1.2rem 'Bricolage Grotesque', sans-serif;
+    text-decoration:none;
+    letter-spacing:-.02em
+}
+
+.logo span {
+    color:var(--c0)
+}
+
+.links {
+    display:flex;
+    gap:4px;
+    list-style:none;
+    margin:0;
+    padding:0
+}
+
+.links a {
+    display:block;
+    text-decoration:none;
+    font:600 13px 'JetBrains Mono',monospace;
+    color:var(--mute);
+    padding:8px 12px;
+    border-radius:8px;
+    transition:color .15s,background .15s
+}
+
+.links a:hover {
+    color:var(--text);
+    background:var(--panel)
+}
+
+.links a.active {
+    color:var(--c0)
+}
+
+.menu-btn {
+    display:none;
+    background:var(--panel);
+    border:1px solid var(--line);
+    color:var(--text);
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    cursor:pointer
+}
+
+.menu-btn svg {
+    width:20px;
+    height:20px
+}
+/* garis progres tipis di bawah navbar (layar sempit) */
+.bar {
+    position:absolute;
+    left:0;
+    bottom:-1px;
+    height:2px;
+    width:0;
+    background:linear-gradient(90deg,var(--c0),var(--c3));
+    box-shadow:0 0 8px rgba(88,166,255,.5)
+}

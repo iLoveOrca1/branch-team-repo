@@ -1,3 +1,5 @@
+@import url('./components/navbar.css');
+
 :root{
     /* Tema Warna*/
   --bg:#0a0d14;
@@ -24,59 +26,17 @@
 }
 
 body {
-    font-family: sans-serif;
-    /* tinggi dummy supaya sticky bisa dicoba saat scroll */
+    margin:0;color:var(--text);
+    background:radial-gradient(900px 500px at 10% -10%,#131b2e 0,transparent 70%),var(--bg);
+    font:16px/1.6 'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+    padding-bottom:env(safe-area-inset-bottom,0px);
     min-height: 200vh;
 }
 
-.layout {
-    max-width: auto;
-    padding-inline: 8em;
-}
-
-/* ===== Navbar ===== */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #fff; /* perlu background agar konten di bawah tidak tembus */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.navbar-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: auto;
-    margin: 0 auto;
-    padding: 1.5em 8em;
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: inherit;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Tombol hamburger (disembunyikan di desktop) */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+.container{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 20px
 }
 
 /* ===== Mobile ===== */
