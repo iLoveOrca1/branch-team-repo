@@ -33,6 +33,14 @@ body {
     min-height: 200vh;
 }
 
+a {
+    color:inherit
+}
+
+section{
+    padding:84px 0 24px
+}
+
 .container{
     max-width:1280px;
     margin:0 auto;
