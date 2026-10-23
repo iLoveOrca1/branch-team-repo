@@ -1,26 +1,9 @@
-/* ==========================================================================
-   Portofolio Pribadi - I Made Gilang Pradnyananda (branch gilang)
-   Desain sistem selaras dengan index.html (Branch Team)
-   ========================================================================== */
-
-/* Gilang's theme accent overrides / specifics */
-/* ==========================================================================
-   Portofolio Pribadi - I Made Gilang Pradnyananda (branch gilang)
-   Desain sistem selaras dengan index.html (Branch Team)
-   ========================================================================== */
-
 /* Gilang's theme accent overrides / specifics */
 :root {
-  --accent: var(--c2); /* #f2cc60 - Gold/Amber accent */
+  --accent: var(--c3); /* #f2cc60 - Gold/Amber accent */
   --accent-glow: rgba(242, 204, 96, 0.25);
   --accent-subtle: rgba(242, 204, 96, 0.1);
 
-  --bg-htb: #1a2332;
-  --panel-htb: #313f55;
-  --htb-gren: #9fef00;
-  --accent: #c5f467;
-  --htb-line: #1f2937;
-  --htb-text: #f2f2f2;
 }
 
 /* ===== Navbar Enhancements ===== */
@@ -43,11 +26,6 @@
   border-color: var(--c0);
   background: var(--panel);
   transform: translateX(-2px);
-}
-
-.logo em {
-  font-style: normal;
-  color: var(--accent);
 }
 
 /* ===== Custom Cursor Accent for Gilang ===== */
