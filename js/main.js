@@ -1,7 +1,6 @@
 import { initNavbar } from "./modules/navbar.js";
 import { typeEffect } from "./modules/typeEffect.js";
 import { initCustomCursor } from "./modules/customCursor.js";
-import { initSmoothScroll } from "./modules/smoothScrolling.js";
 
 let nav = document.getElementById('nav');
 
@@ -18,7 +17,6 @@ initCustomCursor();
 
 document.addEventListener("DOMContentLoaded", () => {  
   initNavbar();
-  initSmoothScroll();
 });
 
 const defaultRoles = [
