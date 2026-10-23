@@ -4,16 +4,23 @@
    ========================================================================== */
 
 /* Gilang's theme accent overrides / specifics */
-:root {
-  --gilang-accent: var(--c2); /* #f2cc60 - Gold/Amber accent */
-  --gilang-accent-glow: rgba(242, 204, 96, 0.25);
-  --gilang-accent-subtle: rgba(242, 204, 96, 0.1);
-}
+/* ==========================================================================
+   Portofolio Pribadi - I Made Gilang Pradnyananda (branch gilang)
+   Desain sistem selaras dengan index.html (Branch Team)
+   ========================================================================== */
 
-/* Base enhancements */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--nav-h) + 20px);
+/* Gilang's theme accent overrides / specifics */
+:root {
+  --accent: var(--c2); /* #f2cc60 - Gold/Amber accent */
+  --accent-glow: rgba(242, 204, 96, 0.25);
+  --accent-subtle: rgba(242, 204, 96, 0.1);
+
+  --bg-htb: #1a2332;
+  --panel-htb: #313f55;
+  --htb-gren: #9fef00;
+  --accent: #c5f467;
+  --htb-line: #1f2937;
+  --htb-text: #f2f2f2;
 }
 
 /* ===== Navbar Enhancements ===== */
@@ -40,38 +47,38 @@ html {
 
 .logo em {
   font-style: normal;
-  color: var(--gilang-accent);
+  color: var(--accent);
 }
 
 /* ===== Custom Cursor Accent for Gilang ===== */
 .custom-cursor {
-  border-color: var(--gilang-accent);
+  border-color: var(--accent);
 }
 
 /* ===== Hero Customizations ===== */
 .hero-gilang .avatar {
-  background: linear-gradient(135deg, var(--gilang-accent), var(--c0) 50%, var(--c4));
-  box-shadow: 0 0 35px var(--gilang-accent-glow);
+  background: linear-gradient(135deg, var(--accent), var(--c0) 50%, var(--c4));
+  box-shadow: 0 0 35px var(--accent-glow);
 }
 
 .hero-gilang .avatar-in span {
-  background: linear-gradient(135deg, var(--gilang-accent), #fff);
+  background: linear-gradient(135deg, var(--accent), #fff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .hero-gilang .role-line {
-  color: var(--gilang-accent);
+  color: var(--accent);
 }
 
 .hero-gilang .caret {
-  background: var(--gilang-accent);
+  background: var(--accent);
 }
 
 .btn.accent {
-  background: var(--gilang-accent);
-  border-color: var(--gilang-accent);
+  background: var(--accent);
+  border-color: var(--accent);
   color: #0a0d14;
   font-weight: 700;
 }
@@ -166,7 +173,7 @@ html {
 }
 
 .term-val.highlight {
-  color: var(--gilang-accent);
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -198,12 +205,12 @@ html {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, var(--gilang-accent), transparent);
+  background: linear-gradient(90deg, var(--accent), transparent);
 }
 
 .stat-num {
   font: 800 1.8rem "Bricolage Grotesque", sans-serif;
-  color: var(--gilang-accent);
+  color: var(--accent);
 }
 
 .stat-label {
@@ -231,8 +238,8 @@ html {
 
 .skill-card:hover {
   transform: translateY(-4px);
-  border-color: var(--card-accent, var(--gilang-accent));
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px color-mix(in srgb, var(--card-accent, var(--gilang-accent)) 15%, transparent);
+  border-color: var(--card-accent, var(--accent));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px color-mix(in srgb, var(--card-accent, var(--accent)) 15%, transparent);
 }
 
 .skill-card-head {
@@ -248,9 +255,9 @@ html {
   border-radius: 10px;
   display: grid;
   place-items: center;
-  background: color-mix(in srgb, var(--card-accent, var(--gilang-accent)) 12%, var(--panel));
-  border: 1px solid color-mix(in srgb, var(--card-accent, var(--gilang-accent)) 50%, var(--line));
-  color: var(--card-accent, var(--gilang-accent));
+  background: color-mix(in srgb, var(--card-accent, var(--accent)) 12%, var(--panel));
+  border: 1px solid color-mix(in srgb, var(--card-accent, var(--accent)) 50%, var(--line));
+  color: var(--card-accent, var(--accent));
 }
 
 .skill-card h3 {
@@ -283,7 +290,7 @@ html {
 }
 
 .skill-card:hover .skill-tag {
-  border-color: color-mix(in srgb, var(--card-accent, var(--gilang-accent)) 40%, var(--line));
+  border-color: color-mix(in srgb, var(--card-accent, var(--accent)) 40%, var(--line));
 }
 
 /* ===== Projects Section ===== */
@@ -307,14 +314,14 @@ html {
 
 .filter-btn:hover {
   color: var(--text);
-  border-color: var(--gilang-accent);
+  border-color: var(--accent);
 }
 
 .filter-btn.active {
-  background: var(--gilang-accent);
-  border-color: var(--gilang-accent);
+  background: var(--accent);
+  border-color: var(--accent);
   color: #0a0d14;
-  box-shadow: 0 0 14px var(--gilang-accent-glow);
+  box-shadow: 0 0 14px var(--accent-glow);
 }
 
 .projects-grid {
@@ -336,8 +343,8 @@ html {
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: var(--proj-accent, var(--gilang-accent));
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px color-mix(in srgb, var(--proj-accent, var(--gilang-accent)) 15%, transparent);
+  border-color: var(--proj-accent, var(--accent));
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px color-mix(in srgb, var(--proj-accent, var(--accent)) 15%, transparent);
 }
 
 .project-top {
@@ -350,9 +357,9 @@ html {
 
 .project-hash {
   font: 600 11px "JetBrains Mono", monospace;
-  color: var(--proj-accent, var(--gilang-accent));
-  background: color-mix(in srgb, var(--proj-accent, var(--gilang-accent)) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--proj-accent, var(--gilang-accent)) 30%, transparent);
+  color: var(--proj-accent, var(--accent));
+  background: color-mix(in srgb, var(--proj-accent, var(--accent)) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--proj-accent, var(--accent)) 30%, transparent);
   padding: 4px 8px;
   border-radius: 6px;
 }
@@ -407,7 +414,7 @@ html {
 
 .project-link {
   font: 600 12px "JetBrains Mono", monospace;
-  color: var(--proj-accent, var(--gilang-accent));
+  color: var(--proj-accent, var(--accent));
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -420,108 +427,146 @@ html {
   gap: 10px;
 }
 
-/* ===== Experience / Timeline Section ===== */
-.timeline {
+/* ===== Experience / Rekam Jejak (Git branch style seperti Karya Pilihan) ===== */
+.commits {
   position: relative;
-  max-width: 860px;
-  margin-top: 40px;
-  padding-left: 36px;
+  padding: 44px 0 52px 44px;
 }
-
-.timeline::before {
-  content: "";
+.cg {
   position: absolute;
-  top: 8px;
-  bottom: 8px;
-  left: 11px;
-  width: 2px;
-  background: var(--line);
-  border-radius: 2px;
+  left: 0;
+  top: 0;
+  width: 44px;
+  overflow: visible;
+  pointer-events: none;
 }
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 36px;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline-dot {
+.branch-tag {
   position: absolute;
-  left: -36px;
-  top: 6px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 2px solid var(--tl-accent, var(--gilang-accent));
-  display: grid;
-  place-items: center;
-  box-shadow: 0 0 12px color-mix(in srgb, var(--tl-accent, var(--gilang-accent)) 40%, transparent);
+  left: 44px;
+  margin: 0;
+  font: 400 11px/1 'JetBrains Mono', monospace;
+  color: var(--c3);
 }
-
-.timeline-dot::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--tl-accent, var(--gilang-accent));
+.branch-tag.t {
+  top: 21px;
 }
-
-.timeline-content {
-  background: linear-gradient(145deg, rgba(18, 23, 34, 0.95), rgba(18, 23, 34, 0.6));
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 22px;
-  transition: border-color 0.2s, transform 0.2s;
+.branch-tag.b {
+  bottom: 16px;
 }
-
-.timeline-content:hover {
-  border-color: var(--tl-accent, var(--gilang-accent));
-  transform: translateX(4px);
-}
-
-.timeline-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.timeline-badge {
-  font: 600 11px "JetBrains Mono", monospace;
-  color: var(--tl-accent, var(--gilang-accent));
-  background: color-mix(in srgb, var(--tl-accent, var(--gilang-accent)) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--tl-accent, var(--gilang-accent)) 30%, transparent);
-  padding: 3px 8px;
-  border-radius: 6px;
-}
-
-.timeline-date {
-  font: 400 12px "JetBrains Mono", monospace;
+.branch-tag i {
+  font-style: normal;
   color: var(--mute);
 }
-
-.timeline-content h3 {
-  font-size: 1.2rem;
-  margin: 0 0 6px;
+.cm {
+  padding: 12px 0 30px;
+}
+.cm:last-of-type {
+  padding-bottom: 30px;
+}
+.proj {
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: 20px;
+  align-items: start;
+}
+.proj .title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--text);
 }
-
-.timeline-org {
-  font: 600 13px "JetBrains Mono", monospace;
-  color: var(--c0);
-  margin-bottom: 12px;
+.proj .desc {
+  margin: 6px 0 0;
+  color: #b9c3d6;
+  max-width: 62ch;
+  line-height: 1.6;
+  font-size: 0.93rem;
+}
+.proj .meta {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font: 400 12px/1.5 'JetBrains Mono', monospace;
+  color: var(--mute);
+}
+.proj .meta b {
+  font-weight: 600;
+  color: var(--c3);
+}
+.tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: #0d111a;
+  border: 1px solid var(--line);
+  color: #c6d0e2;
+  font-family: 'JetBrains Mono', monospace;
+}
+.thumb {
+  height: 120px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--c, var(--accent)) 35%, #0a0d14), #0a0d14 75%);
+}
+.thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.35;
+}
+.thumb span {
+  position: relative;
+  z-index: 1;
+  font: 600 12px 'JetBrains Mono', monospace;
+  color: var(--c, var(--accent));
+  border: 1px solid var(--c, var(--accent));
+  border-radius: 8px;
+  padding: 5px 10px;
+  background: rgba(10, 13, 20, 0.75);
+}
+.links2 {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+  font: 600 12px 'JetBrains Mono', monospace;
+}
+.links2 a {
+  color: var(--c3);
+  text-decoration: none;
+}
+.links2 a:hover {
+  text-decoration: underline;
 }
 
-.timeline-desc {
-  color: #b9c5db;
-  font-size: 0.95rem;
-  line-height: 1.65;
+@media (max-width: 680px) {
+  .proj {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    order: -1;
+    height: 90px;
+  }
+}
+@media (max-width: 768px) {
+  .commits {
+    padding-left: 34px;
+  }
+  .branch-tag {
+    left: 34px;
+  }
 }
 
 /* ===== Contact Section ===== */
@@ -552,7 +597,7 @@ html {
 }
 
 .contact-card:hover {
-  border-color: var(--gilang-accent);
+  border-color: var(--accent);
   background: rgba(18, 23, 34, 0.95);
   transform: translateY(-2px);
 }
@@ -565,13 +610,13 @@ html {
   place-items: center;
   background: rgba(10, 13, 20, 0.8);
   border: 1px solid var(--line);
-  color: var(--gilang-accent);
+  color: var(--accent);
   flex-shrink: 0;
 }
 
 .contact-card:hover .contact-icon {
-  border-color: var(--gilang-accent);
-  box-shadow: 0 0 12px var(--gilang-accent-glow);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .contact-details {
@@ -595,7 +640,7 @@ html {
 }
 
 .contact-card:hover .contact-arrow {
-  color: var(--gilang-accent);
+  color: var(--accent);
   transform: translate(2px, -2px);
 }
 
@@ -648,8 +693,8 @@ html {
 
 .form-input:focus,
 .form-textarea:focus {
-  border-color: var(--gilang-accent);
-  box-shadow: 0 0 10px var(--gilang-accent-glow);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
   outline: none;
 }
 
@@ -670,10 +715,10 @@ html {
   padding: 12px 20px;
   border-radius: 10px;
   background: var(--panel);
-  border: 1px solid var(--gilang-accent);
+  border: 1px solid var(--accent);
   color: var(--text);
   font: 600 13px "JetBrains Mono", monospace;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--gilang-accent-glow);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
   transform: translateY(80px);
   opacity: 0;
   pointer-events: none;

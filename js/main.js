@@ -1,13 +1,15 @@
-import { initSmoothScroll } from "./modules/smoothScrolling.js";
 import { initNavbar } from "./modules/navbar.js";
 import { typeEffect } from "./modules/typeEffect.js";
 import { initCustomCursor } from "./modules/customCursor.js";
-import { initProgressScroll } from "./modules/progressScroll.js";
+import { initSmoothScroll } from "./modules/smoothScrolling.js";
 
-let nav = document.getElementById('nav');;
+let nav = document.getElementById('nav');
 
 function onScroll() {
-  nav.classList.toggle("scrolled", window.scrollY > 8);
+  if (!nav) nav = document.getElementById('nav');
+  if (nav) {
+    nav.classList.toggle("scrolled", window.scrollY > 8);
+  }
 }
 
 window.addEventListener("scroll", onScroll, { passive: true });
@@ -16,11 +18,10 @@ initCustomCursor();
 
 document.addEventListener("DOMContentLoaded", () => {  
   initNavbar();
-  initProgressScroll();
   initSmoothScroll();
 });
 
-const roles = [
+const defaultRoles = [
   "We're Branch Team",
   "I Made Gilang Pradnyananda",
   "I Ketut Dharmawan",
@@ -29,4 +30,19 @@ const roles = [
   "Kadek Keisya Vinanda",
 ];
 
-typeEffect(roles);
+const typedEl = document.getElementById("typed");
+let roles = defaultRoles;
+
+if (typedEl && typedEl.dataset.roles) {
+  try {
+    roles = JSON.parse(typedEl.dataset.roles);
+  } catch (e) {
+    roles = defaultRoles;
+  }
+} else if (window.customRoles && Array.isArray(window.customRoles)) {
+  roles = window.customRoles;
+}
+
+if (typedEl) {
+  typeEffect(roles);
+}

@@ -1,11 +1,13 @@
 // Warna aksen dari tema situs
-const accentColors = [
-  "rgba(88,166,255,", // --c0 biru
-  "rgba(255,123,114,", // --c1 merah
-  "rgba(242,204,96,", // --c2 kuning
-  "rgba(126,231,135,", // --c3 hijau
-  "rgba(210,168,255,", // --c4 ungu
-];
+// const accentColors = [
+//   "rgba(88,166,255,", // --c0 biru
+//   "rgba(255,123,114,", // --c1 merah
+//   "rgba(242,204,96,", // --c2 kuning
+//   "rgba(126,231,135,", // --c3 hijau
+//   "rgba(210,168,255,", // --c4 ungu
+// ];
+
+const accentColors = ["rgba(35, 43, 59,"];
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -151,6 +153,4 @@ window.addEventListener("mouseout", function () {
 init();
 animate();
 
-if (typeof window !== "undefined") {
-  window.initParticles = initParticles;
-}
+

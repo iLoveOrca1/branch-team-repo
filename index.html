@@ -56,15 +56,6 @@
       <div class="bar" id="bar" aria-hidden="true"></div>
     </header>
 
-    <nav class="mm" aria-label="Peta halaman">
-      <div class="mm-line"></div>
-      <div class="mm-fill" id="mmFill"></div>
-      <div class="mm-branch" id="mmBranch"></div>
-      <a class="mm-node" href="#home"       style="top:0%"   data-label="f08a1c3 · beranda"    aria-label="Beranda"></a>
-      <a class="mm-node" href="#about"      style="top:50%"  data-label="2b7d9e5 · tentang"    aria-label="Tentang"></a>
-      <a class="mm-node" href="#our-team"     style="top:100%"  data-label="94c3a61 · skill"      aria-label="Skill"></a>
-    </nav>
-
     <main>
     <section class="hero" id="home">
       <div class="container hero-grid">
@@ -85,11 +76,37 @@
             <a href="mailto:halo@raka.example" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
           </div>
         </div>
-        <div class="avatar-wrap" aria-hidden="true">
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+              </div>
+              <div class="terminal-title">root@branch: ~$</div>
+            </div>
+            <div class="terminal-body">
+              <div class="term-row">
+                <span class="term-key">root@branch:~$</span>
+                <span class="term-val highlight">cat profile.txt</span>
+              </div>
+              <div class="term-row">
+                <pre class="term-val highlight">
+██████╗ ██████╗  █████╗ ███╗   ██╗ ██████╗██╗  ██╗
+██╔══██╗██╔══██╗██╔══██╗████╗  ██║██╔════╝██║  ██║
+██████╔╝██████╔╝███████║██╔██╗ ██║██║     ███████║
+██╔══██╗██╔══██╗██╔══██║██║╚██╗██║██║     ██╔══██║
+██████╔╝██║  ██║██║  ██║██║ ╚████║╚██████╗██║  ██║
+╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝
+                </pre>
+              </div>
+            </div>
+          </div>
+        <!-- <div class="avatar-wrap" aria-hidden="true">
           <div class="avatar"><div class="avatar-in"><span>RW</span></div></div>
           <span class="badge a mono">Create, Commit, Repeat</span>
           <span class="badge b mono">Bali, ID</span>
-        </div>
+        </div> -->
       </div>
     </section>
 
