@@ -1,8 +1,8 @@
 /* Gilang's theme accent overrides / specifics */
 :root {
-  --accent: var(--c3); /* #f2cc60 - Gold/Amber accent */
-  --accent-glow: rgba(242, 204, 96, 0.25);
-  --accent-subtle: rgba(242, 204, 96, 0.1);
+  --accent: var(--c3);
+  --accent-glow: rgba(172, 255, 148, 1.0);
+  --accent-subtle: rgba(198, 237, 209, 1.0);
 
 }
 
