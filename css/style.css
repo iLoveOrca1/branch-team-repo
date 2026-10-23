@@ -35,6 +35,71 @@ body {
     min-height: 200vh;
 }
 
+@media (min-width:768px) {
+    body.has-custom-cursor,
+    body.has-custom-cursor a,
+    body.has-custom-cursor button {
+        cursor:none;
+    }
+}
+
+.custom-cursor{
+    display:none;
+}
+
+@media (min-width:768px) {
+    .custom-cursor{
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:1000000 !important;
+        display:block;
+        width:40px;
+        height:40px;
+        margin:-20px 0 0 -20px;
+        border:2px solid var(--c0);
+        border-radius:50%;
+        background:transparent;
+        pointer-events:none;
+        opacity:0;
+        transform:translate3d(-20px,-20px,0);
+        transition:opacity .16s ease;
+        will-change:transform;
+    }
+
+    .custom-cursor.is-visible{
+        opacity:1;
+    }
+
+    .custom-cursor-dot{
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:1000000 !important;
+        display:block;
+        width:8px;
+        height:8px;
+        margin:-4px 0 0 -4px;
+        border-radius:50%;
+        background:#fff;
+        opacity:0;
+        pointer-events:none;
+        transform:translate3d(-20px,-20px,0);
+        transition:opacity .16s ease;
+        will-change:transform;
+    }
+
+    .custom-cursor-dot.is-visible{
+        opacity:1;
+    }
+}
+
+@media (max-width:767px) {
+    .custom-cursor-dot{
+        display:none;
+    }
+}
+
 a {
     color:inherit
 }
@@ -89,7 +154,7 @@ section{
 
 .team-grid{
     display:grid;
-    grid-template-columns:minmax(0,360px);
+    grid-template-columns:repeat(3,minmax(0,1fr));
     gap:16px;
 }
 
@@ -174,6 +239,11 @@ section{
     text-underline-offset:4px;
 }
 
+.member-coming-soon{
+    color:var(--mute);
+    cursor:default;
+}
+
 .container{
     max-width:1280px;
     margin:0 auto;
@@ -182,6 +252,10 @@ section{
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
+    .team-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
     .menu-btn {
         display: block;
     }
@@ -210,6 +284,10 @@ section{
 }
 
 @media (max-width: 520px) {
+    .team-grid{
+        grid-template-columns:1fr;
+    }
+
     .member-card h3,.member-major{
         min-height:0;
     }
