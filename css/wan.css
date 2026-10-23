@@ -1,0 +1,1403 @@
+:root {
+  --wan-bg: #0a0d14;
+  --wan-panel: #121722;
+  --wan-panel-light: #171e2b;
+  --wan-line: #232b3b;
+  --wan-text: #e7ecf5;
+  --wan-muted: #8d99b0;
+  --wan-blue: #58a6ff;
+  --wan-green: #7ee787;
+  --wan-yellow: #f2cc60;
+  --wan-red: #ff7b72;
+  --wan-nav-height: 68px;
+  --wan-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--wan-nav-height) + 20px);
+  background: var(--wan-bg);
+}
+
+body {
+  margin: 0;
+  color: var(--wan-text);
+  background:
+    radial-gradient(900px 540px at 12% -18%, #172239 0, transparent 72%),
+    var(--wan-bg);
+  font: 16px/1.65 "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+body,
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--wan-blue);
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+p,
+ol,
+ul {
+  margin: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.wan-container {
+  width: min(1160px, 100% - 48px);
+  margin-inline: auto;
+}
+
+.wan-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--wan-line);
+  background: rgb(10 13 20 / 90%);
+  backdrop-filter: blur(14px);
+}
+
+.wan-nav-inner {
+  display: flex;
+  min-height: var(--wan-nav-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.wan-logo {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  text-decoration: none;
+}
+
+.wan-logo span {
+  color: var(--wan-blue);
+}
+
+.wan-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wan-nav-links a,
+.wan-nav-cta {
+  border-radius: 8px;
+  color: var(--wan-muted);
+  font: 600 0.78rem/1.2 var(--wan-mono);
+  text-decoration: none;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.wan-nav-links a {
+  display: block;
+  padding: 10px 12px;
+}
+
+.wan-nav-links a:hover,
+.wan-nav-links a[aria-current="location"] {
+  color: var(--wan-blue);
+  background: var(--wan-panel);
+}
+
+.wan-nav-cta {
+  padding: 10px 13px;
+  border: 1px solid var(--wan-line);
+  color: var(--wan-text);
+}
+
+.wan-nav-cta:hover {
+  border-color: var(--wan-blue);
+  color: var(--wan-blue);
+}
+
+.wan-nav-cta span {
+  margin-right: 5px;
+  color: var(--wan-blue);
+}
+
+.wan-menu-btn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 11px 9px;
+  border: 1px solid var(--wan-line);
+  border-radius: 9px;
+  background: var(--wan-panel);
+  cursor: pointer;
+}
+
+.wan-menu-btn span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: var(--wan-text);
+}
+
+.wan-progress {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--wan-blue), var(--wan-green));
+}
+
+.wan-hero {
+  display: grid;
+  min-height: calc(100vh - var(--wan-nav-height));
+  min-height: calc(100svh - var(--wan-nav-height));
+  min-height: calc(100dvh - var(--wan-nav-height));
+  grid-template-columns: 1fr 0.86fr;
+  align-items: center;
+  gap: clamp(48px, 8vw, 110px);
+  padding-block: clamp(70px, 9vh, 120px);
+  box-sizing: border-box;
+}
+
+.wan-status,
+.wan-eyebrow,
+.wan-card-label,
+.wan-heading-note,
+.wan-project-type,
+.wan-hero-meta,
+.wan-portrait-index,
+.wan-portrait-label,
+.wan-timeline time,
+.wan-skill-grid li span,
+.wan-life-card > div:last-child > span,
+.wan-footer {
+  font-family: var(--wan-mono);
+}
+
+.wan-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 11px;
+  border: 1px solid var(--wan-line);
+  border-radius: 8px;
+  background: var(--wan-panel);
+  color: var(--wan-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.wan-status > span,
+.wan-hero-meta i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--wan-green);
+  box-shadow: 0 0 12px rgb(126 231 135 / 55%);
+}
+
+.wan-kicker {
+  margin-top: 28px;
+  color: var(--wan-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wan-kicker span {
+  padding-inline: 4px;
+  color: var(--wan-blue);
+}
+
+.wan-hero h1 {
+  margin-top: 8px;
+  font-size: clamp(3.1rem, 7.3vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.wan-hero h1 span {
+  display: block;
+  color: var(--wan-blue);
+}
+
+.wan-intro-panel {
+  max-width: 550px;
+  margin-top: 28px;
+  padding: 20px;
+  border: 1px solid var(--wan-line);
+  border-left: 3px solid var(--wan-blue);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgb(18 23 34 / 96%), rgb(18 23 34 / 70%));
+}
+
+.wan-intro-panel p {
+  color: #c9d3e6;
+  font-size: clamp(1rem, 1.7vw, 1.12rem);
+}
+
+.wan-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 11px 18px;
+  border: 1px solid var(--wan-line);
+  border-radius: 9px;
+  background: var(--wan-panel);
+  color: var(--wan-text);
+  font: 700 0.76rem var(--wan-mono);
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.wan-button:hover {
+  transform: translateY(-2px);
+  border-color: var(--wan-blue);
+}
+
+.wan-button-primary {
+  border-color: var(--wan-blue);
+  background: var(--wan-blue);
+  color: var(--wan-bg);
+}
+
+.wan-button-primary:hover {
+  background: #79b8ff;
+}
+
+.wan-button-primary span:last-child {
+  font-size: 1rem;
+}
+
+.wan-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 24px;
+  color: var(--wan-muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.wan-hero-meta > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--wan-green);
+}
+
+.wan-hero-meta i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+}
+
+.wan-portrait-wrap {
+  position: relative;
+  width: min(100%, 390px);
+  justify-self: end;
+  padding: 16px;
+}
+
+.wan-portrait-outer {
+  position: relative;
+  padding: 14px;
+  border: 2px dashed rgba(255, 123, 114, 0.48);
+  border-radius: 4px;
+  background: radial-gradient(circle at center, rgb(18 23 34 / 50%), transparent 75%);
+  transition: border-color 220ms ease, transform 240ms ease;
+}
+
+.wan-portrait-outer:hover {
+  border-color: rgba(255, 123, 114, 0.9);
+  transform: translateY(-3px);
+}
+
+.wan-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #0a0d14;
+  z-index: 3;
+}
+
+.wan-corner-tl {
+  top: -7px;
+  left: -7px;
+  background: var(--wan-yellow);
+  box-shadow: 2px 2px 0 #0a0d14;
+}
+
+.wan-corner-br {
+  bottom: -7px;
+  right: -7px;
+  background: var(--wan-blue);
+  box-shadow: 2px 2px 0 #0a0d14;
+}
+
+.wan-badge {
+  position: absolute;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  font-family: var(--wan-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 2px solid #0a0d14;
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 #0a0d14;
+  user-select: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.wan-badge:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #0a0d14;
+}
+
+.wan-badge-top {
+  top: -12px;
+  right: -8px;
+  background: var(--wan-yellow);
+  color: #0a0d14;
+}
+
+.wan-badge-top .wan-badge-icon {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.wan-badge-bottom {
+  bottom: -12px;
+  left: -8px;
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.wan-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgb(255 255 255 / 80%);
+  animation: wan-pulse 1.8s infinite;
+}
+
+@keyframes wan-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+.wan-portrait-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border: 2px solid #0a0d14;
+  border-radius: 2px;
+  background: #0d121a;
+  box-shadow: 8px 8px 0px #0a0d14, 8px 8px 0px 1.5px var(--wan-line);
+  transition: box-shadow 240ms ease;
+}
+
+.wan-portrait-outer:hover .wan-portrait-frame {
+  box-shadow: 10px 10px 0px #0a0d14, 10px 10px 0px 2px var(--wan-blue);
+}
+
+.wan-portrait-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 350ms ease;
+}
+
+.wan-portrait-outer:hover .wan-portrait-frame img {
+  transform: scale(1.03);
+}
+
+.wan-section {
+  padding-block: 96px;
+  scroll-margin-top: calc(var(--wan-nav-height) + 12px);
+}
+
+.wan-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.wan-eyebrow {
+  margin-bottom: 12px;
+  color: var(--wan-green);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.wan-section-heading h2,
+.wan-contact-grid h2 {
+  font-size: clamp(2.1rem, 5vw, 3.65rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1.08;
+}
+
+.wan-section-heading h2 span,
+.wan-contact-grid h2 span {
+  color: var(--wan-blue);
+}
+
+.wan-heading-note {
+  padding-bottom: 5px;
+  color: var(--wan-muted);
+  font-size: 0.7rem;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.wan-about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 18px;
+}
+
+.wan-panel {
+  border: 1px solid var(--wan-line);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgb(18 23 34 / 96%), rgb(18 23 34 / 72%));
+}
+
+.wan-about-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.wan-card-label {
+  color: var(--wan-muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.wan-about-card h3 {
+  margin-top: 26px;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.wan-about-card > p:not(.wan-card-label) {
+  margin-top: 15px;
+  color: #c9d3e6;
+  font-size: 0.92rem;
+}
+
+.wan-location {
+  margin-top: auto;
+  padding-top: 30px;
+  color: var(--wan-muted);
+  font: 0.7rem var(--wan-mono);
+}
+
+.wan-location span {
+  color: var(--wan-blue);
+}
+
+.wan-github {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid var(--wan-line);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgb(18 23 34 / 96%), rgb(18 23 34 / 72%));
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.wan-github:hover {
+  border-color: rgba(88, 166, 255, 0.4);
+}
+
+.wan-github-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.wan-github-head a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--wan-text);
+  font: 700 0.85rem var(--wan-mono);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.wan-github-head a:hover {
+  color: var(--wan-blue);
+}
+
+.wan-github-icon {
+  flex-shrink: 0;
+  color: var(--wan-text);
+}
+
+.wan-external-arrow {
+  color: var(--wan-blue);
+  font-size: 0.85rem;
+}
+
+.wan-github-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border: 1px solid var(--wan-line);
+  border-radius: 6px;
+  background: var(--wan-panel-light);
+  color: var(--wan-muted);
+  font: 600 0.65rem var(--wan-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wan-github-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--wan-green);
+  box-shadow: 0 0 8px rgb(126 231 135 / 60%);
+}
+
+.wan-github-period {
+  margin-top: 16px;
+  color: var(--wan-muted);
+  font: 0.72rem var(--wan-mono);
+}
+
+.wan-github-chart-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 8px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--wan-line) transparent;
+}
+
+.wan-contribution-chart {
+  display: block;
+  width: 100%;
+  min-width: 580px;
+  height: auto;
+  border-radius: 6px;
+  /* Converts glaring white background and tiles into soft dark slate and calm glowing green */
+  filter: invert(93%) hue-rotate(180deg) brightness(0.9) contrast(1.15);
+  opacity: 0.92;
+  transition: filter 220ms ease, opacity 220ms ease;
+}
+
+.wan-github:hover .wan-contribution-chart {
+  opacity: 1;
+  filter: invert(93%) hue-rotate(180deg) brightness(0.96) contrast(1.18);
+}
+
+.wan-github-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgb(35 43 59 / 60%);
+}
+
+.wan-github-caption {
+  color: var(--wan-muted);
+  font: 0.68rem var(--wan-mono);
+}
+
+.wan-github-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--wan-blue);
+  font: 600 0.72rem var(--wan-mono);
+  text-decoration: none;
+  transition: color 160ms ease, gap 160ms ease;
+}
+
+.wan-github-profile-link:hover {
+  color: #79b8ff;
+  gap: 8px;
+}
+
+.wan-education {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 36px;
+  margin-top: 64px;
+  padding-top: 30px;
+  border-top: 1px solid var(--wan-line);
+}
+
+.wan-education-heading .wan-eyebrow {
+  margin-bottom: 12px;
+}
+
+.wan-education-heading h2 {
+  max-width: 12ch;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  letter-spacing: -0.05em;
+  line-height: 1.12;
+}
+
+.wan-education-heading h2 span {
+  color: var(--wan-blue);
+}
+
+.wan-timeline {
+  display: grid;
+  gap: 0;
+}
+
+.wan-timeline li {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 20px;
+  padding: 0 0 25px;
+}
+
+.wan-timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.wan-timeline time {
+  padding-top: 3px;
+  color: var(--wan-blue);
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+.wan-timeline li > div {
+  position: relative;
+  padding-left: 20px;
+  border-left: 1px solid var(--wan-line);
+}
+
+.wan-timeline li > div::before {
+  position: absolute;
+  top: 6px;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--wan-blue);
+  content: "";
+}
+
+.wan-timeline h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.wan-timeline p {
+  margin-top: 4px;
+  color: var(--wan-muted);
+  font-size: 0.83rem;
+}
+
+.wan-timeline li > div > p:first-of-type {
+  color: var(--wan-muted);
+}
+
+.wan-section-muted {
+  background: rgb(18 23 34 / 45%);
+  border-block: 1px solid rgb(35 43 59 / 55%);
+}
+
+.wan-section-muted > .wan-container {
+  width: min(1160px, 100% - 48px);
+}
+
+#experience,
+#life {
+  padding-block: 88px;
+}
+
+.wan-certs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.wan-cert-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 3.5vw, 34px);
+  border: 1px solid var(--wan-line);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgb(18 23 34 / 96%), rgb(18 23 34 / 72%));
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.wan-cert-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--wan-blue);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 25%);
+}
+
+.wan-cert-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.wan-cert-year {
+  color: var(--wan-blue);
+  font: 700 0.8rem var(--wan-mono);
+}
+
+.wan-cert-badge {
+  padding: 4px 9px;
+  border: 1px solid var(--wan-line);
+  border-radius: 6px;
+  background: var(--wan-panel-light);
+  color: var(--wan-green);
+  font: 700 0.65rem var(--wan-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.wan-cert-title {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--wan-text);
+}
+
+.wan-cert-issuer {
+  margin-top: 6px;
+  color: var(--wan-blue);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.wan-cert-desc {
+  margin-top: 10px;
+  color: var(--wan-muted);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.wan-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.wan-skill-grid li {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--wan-line);
+  border-radius: 10px;
+  background: var(--wan-panel);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.wan-skill-grid li:hover {
+  transform: translateY(-2px);
+  border-color: var(--wan-blue);
+}
+
+.wan-skill-grid li strong {
+  font-size: 0.95rem;
+}
+
+.wan-skill-grid li span {
+  color: var(--wan-muted);
+  font-size: 0.58rem;
+}
+
+.wan-text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--wan-blue);
+  font: 700 0.72rem var(--wan-mono);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wan-text-button:hover {
+  color: var(--wan-text);
+}
+
+[data-skill-extra][hidden] {
+  display: none;
+}
+
+.wan-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.wan-gallery-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--wan-line);
+  border-radius: 12px;
+  background: var(--wan-panel);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.wan-gallery-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--wan-blue);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 40%);
+}
+
+.wan-gallery-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #0d121a;
+}
+
+.wan-gallery-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 380ms ease;
+}
+
+.wan-gallery-card:hover .wan-gallery-media img {
+  transform: scale(1.05);
+}
+
+.wan-gallery-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--wan-line);
+  background: var(--wan-panel-light);
+}
+
+.wan-gallery-name {
+  color: var(--wan-text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wan-gallery-sub {
+  color: var(--wan-muted);
+  font: 0.68rem var(--wan-mono);
+}
+
+.wan-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border: 1px solid var(--wan-line);
+  border-radius: 14px;
+  background: var(--wan-panel);
+}
+
+.wan-project-art {
+  position: relative;
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 24% 88%, rgb(88 166 255 / 20%), transparent 40%),
+    linear-gradient(135deg, #1a2637, #0d121c);
+}
+
+.wan-project-window {
+  position: absolute;
+  inset: 15% 17%;
+  overflow: hidden;
+  border: 1px solid #3a4c62;
+  border-radius: 8px;
+  background: #101620;
+  box-shadow: 0 22px 70px rgb(0 0 0 / 35%);
+}
+
+.wan-project-window i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 11px 0 0 9px;
+  border-radius: 50%;
+  background: var(--wan-red);
+}
+
+.wan-project-window i:nth-child(2) {
+  background: var(--wan-yellow);
+}
+
+.wan-project-window i:nth-child(3) {
+  background: var(--wan-green);
+}
+
+.wan-project-window b {
+  position: absolute;
+  top: 35%;
+  left: 12%;
+  width: 66%;
+  height: 36%;
+  border-radius: 8px;
+  background: linear-gradient(120deg, rgb(88 166 255 / 55%), rgb(126 231 135 / 20%));
+}
+
+.wan-project-mark {
+  position: relative;
+  color: var(--wan-text);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.1em;
+  text-shadow: 4px 4px 0 var(--wan-blue);
+}
+
+.wan-project-copy {
+  align-self: center;
+  padding: clamp(24px, 5vw, 58px);
+}
+
+.wan-project-copy h3 {
+  margin-top: 10px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: -0.05em;
+}
+
+.wan-project-copy > p:not(.wan-card-label) {
+  max-width: 44ch;
+  margin-top: 12px;
+  color: #c9d3e6;
+}
+
+.wan-project-type {
+  color: var(--wan-muted);
+  font-size: 0.68rem;
+}
+
+.wan-project-type span {
+  color: var(--wan-blue);
+}
+
+.wan-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.wan-tech-list li {
+  padding: 5px 9px;
+  border: 1px solid var(--wan-line);
+  border-radius: 6px;
+  color: var(--wan-muted);
+  font: 0.62rem var(--wan-mono);
+}
+
+.wan-project-link {
+  margin-top: 24px;
+}
+
+.wan-contact-section {
+  padding-block: 88px;
+  border-top: 1px solid var(--wan-line);
+  background:
+    radial-gradient(500px 320px at 90% 100%, rgb(88 166 255 / 9%), transparent 75%),
+    var(--wan-panel);
+  scroll-margin-top: calc(var(--wan-nav-height) + 12px);
+}
+
+.wan-contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 72px;
+}
+
+.wan-contact-grid h2 {
+  max-width: 15ch;
+}
+
+.wan-contact-copy {
+  max-width: 55ch;
+  margin-top: 18px;
+  color: #c9d3e6;
+}
+
+.wan-socials {
+  border-top: 1px solid var(--wan-line);
+}
+
+.wan-socials a {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 17px 4px;
+  border-bottom: 1px solid var(--wan-line);
+  color: var(--wan-muted);
+  font: 600 0.84rem var(--wan-mono);
+  text-decoration: none;
+  transition: color 160ms ease, padding 160ms ease;
+}
+
+.wan-socials a:hover {
+  padding-inline: 10px;
+  color: var(--wan-blue);
+}
+
+.wan-footer {
+  padding-block: 20px;
+  color: var(--wan-muted);
+  font-size: 0.65rem;
+}
+
+.wan-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+}
+
+.wan-footer p span {
+  color: var(--wan-blue);
+}
+
+.wan-footer a {
+  text-decoration: none;
+}
+
+.wan-footer a:hover {
+  color: var(--wan-blue);
+}
+
+@media (max-width: 900px) {
+  .wan-nav-inner {
+    gap: 12px;
+  }
+
+  .wan-nav-links a {
+    padding-inline: 8px;
+    font-size: 0.7rem;
+  }
+
+  .wan-hero {
+    min-height: calc(100svh - var(--wan-nav-height));
+    gap: 42px;
+    padding-block: clamp(50px, 7vh, 80px);
+  }
+
+  .wan-portrait-wrap {
+    width: min(100%, 350px);
+  }
+
+  .wan-about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wan-education {
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  .wan-certs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .wan-skill-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .wan-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --wan-nav-height: 62px;
+  }
+
+  .wan-container,
+  .wan-section-muted > .wan-container {
+    width: min(100% - 36px, 560px);
+  }
+
+  .wan-nav-inner {
+    justify-content: flex-start;
+  }
+
+  .wan-menu-btn {
+    display: block;
+    order: 3;
+    margin-left: auto;
+  }
+
+  .wan-nav-inner nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+  }
+
+  .wan-nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 10px 18px 16px;
+    border-bottom: 1px solid var(--wan-line);
+    background: rgb(10 13 20 / 97%);
+  }
+
+  .wan-nav-links.wan-open {
+    display: flex;
+  }
+
+  .wan-nav-links a {
+    padding: 12px;
+    font-size: 0.78rem;
+  }
+
+  .wan-nav-cta {
+    margin-left: auto;
+  }
+
+  .wan-menu-btn + nav + .wan-nav-cta {
+    margin-left: auto;
+  }
+
+  .wan-menu-btn {
+    margin-left: 0;
+  }
+
+  .wan-hero {
+    min-height: calc(100svh - var(--wan-nav-height));
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-block: 50px 44px;
+  }
+
+  .wan-hero h1 {
+    font-size: clamp(3.4rem, 15vw, 5.3rem);
+  }
+
+  .wan-portrait-wrap {
+    width: min(85%, 340px);
+    justify-self: center;
+    margin-inline: auto;
+  }
+
+  .wan-section {
+    padding-block: 72px;
+  }
+
+  .wan-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .wan-heading-note {
+    text-align: left;
+  }
+
+  .wan-about-grid,
+  .wan-certs-grid,
+  .wan-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .wan-education {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 52px;
+  }
+
+  .wan-about-card {
+    min-height: 260px;
+  }
+
+  #experience,
+  #life,
+  .wan-contact-section {
+    padding-block: 68px;
+  }
+
+  .wan-skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wan-skill-grid li {
+    min-height: 68px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .wan-project {
+    grid-template-columns: 1fr;
+  }
+
+  .wan-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .wan-project-art {
+    min-height: 250px;
+  }
+
+  .wan-contact-grid {
+    gap: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wan-gallery {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .wan-badge {
+    font-size: 0.62rem;
+    padding: 5px 9px;
+  }
+
+  .wan-badge-top {
+    top: -10px;
+    right: -4px;
+  }
+
+  .wan-badge-bottom {
+    bottom: -10px;
+    left: -4px;
+  }
+}
+
+@media (max-width: 420px) {
+  .wan-container,
+  .wan-section-muted > .wan-container {
+    width: min(100% - 28px, 560px);
+  }
+
+  .wan-nav-cta {
+    padding: 9px 10px;
+    font-size: 0.68rem;
+  }
+
+  .wan-hero h1 {
+    font-size: clamp(3rem, 14vw, 4rem);
+  }
+
+  .wan-timeline li {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .wan-timeline li > div {
+    padding-left: 14px;
+  }
+
+  .wan-github {
+    padding: 17px;
+  }
+
+  .wan-footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
