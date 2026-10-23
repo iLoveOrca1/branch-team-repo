@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#151a17" />
+    <meta name="description" content="Portofolio I Kadek Oka Santika, mahasiswa Sistem Informasi Undiksha yang sedang belajar pemrograman." />
+    <title>I Kadek Oka Santika, Portofolio</title>
+    <link rel="stylesheet" href="../css/oka.css" />
+    <script src="../js/oka.js" defer></script>
+  </head>
+  <body>
+    <header class="oka-nav" id="oka-nav">
+      <div class="oka-container oka-nav-inner">
+        <a class="oka-logo" href="#oka-home" aria-label="Oka, kembali ke beranda">oka<span>.dev</span></a>
+        <button class="oka-menu-btn" id="oka-menu-btn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="oka-nav-links">Menu</button>
+        <nav aria-label="Navigasi portofolio">
+          <ul class="oka-nav-links" id="oka-nav-links">
+            <li><a href="#oka-home">Beranda</a></li>
+            <li><a href="#oka-about">Tentang</a></li>
+            <li><a href="#oka-skills">Skill</a></li>
+            <li><a href="#oka-projects">Proyek</a></li>
+            <li><a href="#oka-journey">Perjalanan</a></li>
+            <li><a href="#oka-contact">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="oka-progress" id="oka-progress" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <section class="oka-hero" id="oka-home">
+        <div class="oka-container oka-hero-grid">
+          <div class="oka-hero-copy">
+            <h1>I Kadek<br />Oka Santika</h1>
+            <p class="oka-lead">Mahasiswa Sistem Informasi semester 1 di Undiksha, kampus Denpasar. Saya belajar pemrograman dengan membuat hal kecil sampai jalan, lalu memperbaikinya.</p>
+            <div class="oka-actions">
+              <a class="oka-btn oka-btn-primary" href="#oka-projects">Lihat proyek</a>
+              <a class="oka-btn" href="#oka-contact">Hubungi saya</a>
+            </div>
+          </div>
+
+          <section class="oka-term" aria-label="Terminal interaktif">
+            <div class="oka-term-bar"><span>oka@denpasar</span><span>ketik help, lalu Enter</span></div>
+            <div class="oka-term-body" id="oka-term-out" role="log" aria-live="polite" tabindex="0">
+              <div class="oka-line">I Kadek Oka Santika</div>
+              <div class="oka-line">Mahasiswa Sistem Informasi semester 1, Undiksha Denpasar.</div>
+              <div class="oka-line">Sedang membangun dasar pemrograman dan logika.</div>
+            </div>
+            <form class="oka-term-form" id="oka-term-form" hidden>
+              <label class="oka-ps" for="oka-term-input">oka@denpasar:~$</label>
+              <input id="oka-term-input" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="Ketik perintah terminal" />
+            </form>
+            <div class="oka-chips" id="oka-chips" hidden>
+              <button type="button" data-cmd="help">help</button>
+              <button type="button" data-cmd="neofetch">neofetch</button>
+              <button type="button" data-cmd="skills">skills</button>
+              <button type="button" data-cmd="projects">projects</button>
+              <button type="button" data-cmd="contact">contact</button>
+            </div>
+          </section>
+        </div>
+      </section>
+      <div class="oka-poleng" aria-hidden="true"></div>
+
+      <section class="oka-section" id="oka-about">
+        <div class="oka-container oka-about-grid">
+          <div>
+            <h2 class="oka-title">Belajar teknologi, selangkah demi selangkah</h2>
+            <div class="oka-prose">
+              <p>Saya mahasiswa semester pertama Program Studi Sistem Informasi di Undiksha, kampus Denpasar. Saat ini saya fokus memahami dasar pemrograman, logika, dan cara kerja sebuah sistem.</p>
+              <p>Saya senang belajar lewat praktik langsung dan mengubah materi kuliah menjadi proyek kecil. Ke depan, saya ingin mengembangkan kemampuan di bidang teknologi dan analisis sistem.</p>
+            </div>
+          </div>
+          <dl class="oka-facts">
+            <div>
+              <dt>Kampus</dt>
+              <dd>Undiksha, Denpasar</dd>
+            </div>
+            <div>
+              <dt>Semester</dt>
+              <dd>1, mahasiswa baru</dd>
+            </div>
+            <div>
+              <dt>Bahasa</dt>
+              <dd>Python, C++, JavaScript</dd>
+            </div>
+            <div>
+              <dt>Fokus</dt>
+              <dd>Dasar pemrograman, logika, cara kerja sistem</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="oka-section" id="oka-skills">
+        <div class="oka-container">
+          <h2 class="oka-title">Yang sedang saya pelajari</h2>
+          <p class="oka-intro">Daftar ini akan bertambah seiring pengalaman dan proyek.</p>
+          <div class="oka-skill-list">
+            <article class="oka-skill">
+              <h3>Python</h3>
+              <div>
+                <p>Dasar pemrograman: variabel, percabangan, perulangan, dan pengolahan data sederhana.</p>
+                <p class="oka-tags">Syntax dasar, problem solving</p>
+              </div>
+            </article>
+            <article class="oka-skill">
+              <h3>C++</h3>
+              <div>
+                <p>Melatih logika dan memahami struktur program lewat latihan di terminal.</p>
+                <p class="oka-tags">Algoritma, dasar C++</p>
+              </div>
+            </article>
+            <article class="oka-skill">
+              <h3>JavaScript</h3>
+              <div>
+                <p>Mempelajari interaksi halaman web dan cara membuat antarmuka lebih hidup.</p>
+                <p class="oka-tags">DOM, interaksi web</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="oka-section" id="oka-projects">
+        <div class="oka-container">
+          <h2 class="oka-title">Dibangun sambil belajar</h2>
+          <ol class="oka-log">
+            <li class="oka-log-item">
+              <h3>Portofolio Bootcamp</h3>
+              <p>Halaman portofolio pribadi yang dibuat sebagai bagian dari proyek tim, dengan HTML terstruktur, CSS terpisah, dan JavaScript untuk interaksi.</p>
+              <p class="oka-tags">HTML, CSS, JavaScript, GitHub</p>
+              <a class="oka-link" href="https://github.com/iLoveOrca1/branch-team-repo" target="_blank" rel="noopener noreferrer">Lihat repository di GitHub</a>
+            </li>
+            <li class="oka-log-item oka-log-alt">
+              <h3>Eksperimen Smart Lamp</h3>
+              <p>Eksplorasi mikrokontroler yang menggabungkan sensor cahaya, RTC, sensor suhu dan kelembapan, serta LCD untuk menampilkan informasi dan mengatur lampu otomatis.</p>
+              <p class="oka-tags">Arduino, LDR, RTC, DHT22</p>
+              <p class="oka-status">Eksperimen pembelajaran, belum dirilis</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="oka-section" id="oka-journey">
+        <div class="oka-container">
+          <h2 class="oka-title">Langkah awal saya</h2>
+          <ol class="oka-log">
+            <li class="oka-log-item">
+              <p class="oka-date">2026 sampai sekarang</p>
+              <h3>Mahasiswa Sistem Informasi</h3>
+              <p>Universitas Pendidikan Ganesha (Undiksha), kampus Denpasar. Membangun dasar pengetahuan sistem informasi dan pemrograman.</p>
+            </li>
+            <li class="oka-log-item oka-log-alt">
+              <p class="oka-date">Saat ini</p>
+              <h3>Belajar lewat praktik</h3>
+              <p>Mengerjakan latihan pemrograman dan proyek portofolio bersama tim untuk melatih kemampuan teknis serta kolaborasi dengan GitHub.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="oka-section" id="oka-contact">
+        <div class="oka-container oka-contact-grid">
+          <div>
+            <h2 class="oka-title">Terhubung yuk</h2>
+            <p class="oka-prose">Saya terbuka untuk bertukar ide, belajar bareng, atau berdiskusi tentang teknologi dan proyek pemrograman.</p>
+          </div>
+          <dl class="oka-facts">
+            <div>
+              <dt>GitHub</dt>
+              <dd><a class="oka-link" href="https://github.com/okaSantikaa" target="_blank" rel="noopener noreferrer">github.com/okaSantikaa</a></dd>
+            </div>
+            <div>
+              <dt>Instagram</dt>
+              <dd><a class="oka-link" href="https://www.instagram.com/_okasantikaa/" target="_blank" rel="noopener noreferrer">@_okasantikaa</a></dd>
+            </div>
+            <div>
+              <dt>Lokasi</dt>
+              <dd>Denpasar, Bali, Indonesia</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <div class="oka-poleng" aria-hidden="true"></div>
+    <footer class="oka-footer">
+      <div class="oka-container oka-footer-inner">
+        <span>&copy; <span id="oka-year">2026</span> I Kadek Oka Santika</span>
+        <a href="#oka-home">Kembali ke atas</a>
+      </div>
+    </footer>
+  </body>
+</html>

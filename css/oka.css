@@ -1,0 +1,500 @@
+/* Portofolio I Kadek Oka Santika
+   CSS murni, tanpa framework dan tanpa font eksternal.
+   Palet: batu pura berlumut, daun lontar, kunyit. Prefix oka- agar aman dari CSS tim. */
+:root {
+  --oka-batu: #151a17;
+  --oka-batu-dalam: #0f1311;
+  --oka-garis: #2b352e;
+  --oka-lontar: #e6dec2;
+  --oka-redup: #9ba494;
+  --oka-kunyit: #58a6ff;
+  --oka-lumut: #8fa77d;
+  --oka-galat: #e0917a;
+  --oka-nav-h: 60px;
+  --oka-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --oka-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--oka-nav-h) + 12px);
+  background: var(--oka-batu);
+}
+body {
+  margin: 0;
+  color: var(--oka-lontar);
+  background: var(--oka-batu);
+  font: 17px/1.75 var(--oka-serif);
+}
+a {
+  color: inherit;
+}
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+dl,
+dd {
+  margin: 0;
+}
+ol,
+ul {
+  padding: 0;
+  list-style: none;
+}
+.oka-container {
+  width: min(1060px, 100%);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+:focus-visible {
+  outline: 2px solid var(--oka-kunyit);
+  outline-offset: 3px;
+}
+
+/* Navbar */
+.oka-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: var(--oka-batu);
+  border-bottom: 1px solid var(--oka-garis);
+}
+.oka-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--oka-nav-h);
+}
+.oka-logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.oka-logo span {
+  color: var(--oka-kunyit);
+}
+.oka-nav-links {
+  display: flex;
+  gap: 22px;
+}
+.oka-nav-links a {
+  padding: 6px 0;
+  color: var(--oka-redup);
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.oka-nav-links a:hover {
+  color: var(--oka-lontar);
+}
+.oka-nav-links a.oka-active {
+  color: var(--oka-lontar);
+  border-bottom-color: var(--oka-kunyit);
+}
+.oka-menu-btn {
+  display: none;
+  padding: 7px 14px;
+  border: 1px solid var(--oka-garis);
+  border-radius: 4px;
+  background: none;
+  color: var(--oka-lontar);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.oka-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: var(--oka-kunyit);
+}
+
+/* Motif kain poleng, dipakai dua kali saja sebagai pemisah */
+.oka-poleng {
+  height: 10px;
+  background: conic-gradient(var(--oka-lontar) 25%, var(--oka-batu) 0 50%, var(--oka-lontar) 0 75%, var(--oka-batu) 0) 0 0 / 20px 20px;
+  opacity: 0.5;
+}
+
+/* Hero */
+.oka-hero {
+  padding: 64px 0 60px;
+}
+.oka-hero-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 52px;
+  align-items: center;
+}
+.oka-hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+.oka-lead {
+  max-width: 42ch;
+  margin-top: 22px;
+  color: var(--oka-redup);
+  font-size: 1.1rem;
+}
+.oka-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.oka-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--oka-lontar);
+  border-radius: 4px;
+  color: var(--oka-lontar);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.oka-btn:hover {
+  background: var(--oka-lontar);
+  color: var(--oka-batu);
+}
+.oka-btn-primary {
+  border-color: var(--oka-kunyit);
+  background: var(--oka-kunyit);
+  color: var(--oka-batu);
+  font-weight: 700;
+}
+.oka-btn-primary:hover {
+  border-color: var(--oka-lontar);
+  background: var(--oka-lontar);
+}
+
+/* Terminal: satu-satunya elemen yang memakai monospace */
+.oka-term {
+  min-width: 0;
+  border: 1px solid var(--oka-garis);
+  border-radius: 6px;
+  background: var(--oka-batu-dalam);
+  font-family: var(--oka-mono);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.oka-term-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--oka-garis);
+  color: var(--oka-redup);
+  font-size: 12px;
+}
+.oka-term-body {
+  height: 300px;
+  padding: 14px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.oka-line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.oka-line a {
+  color: var(--oka-kunyit);
+}
+.oka-ps {
+  color: var(--oka-kunyit);
+}
+.oka-line .oka-ps {
+  margin-right: 0.6ch;
+}
+.oka-err {
+  color: var(--oka-galat);
+}
+.oka-dim {
+  color: var(--oka-redup);
+}
+.oka-gap {
+  height: 0.8em;
+}
+.oka-term-form {
+  display: flex;
+  gap: 1ch;
+  align-items: center;
+  padding: 10px 14px;
+  border-top: 1px solid var(--oka-garis);
+}
+.oka-term-form[hidden],
+.oka-chips[hidden] {
+  display: none;
+}
+.oka-term-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: var(--oka-lontar);
+  caret-color: var(--oka-kunyit);
+  font: inherit;
+}
+.oka-term-form:focus-within {
+  box-shadow: inset 0 -2px 0 var(--oka-kunyit);
+}
+.oka-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 14px 14px;
+}
+.oka-chips button {
+  padding: 3px 10px;
+  border: 1px solid var(--oka-garis);
+  border-radius: 3px;
+  background: none;
+  color: var(--oka-redup);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.oka-chips button:hover {
+  border-color: var(--oka-kunyit);
+  color: var(--oka-kunyit);
+}
+
+/* Section umum */
+.oka-section {
+  padding: 84px 0 8px;
+}
+.oka-title {
+  max-width: 20ch;
+  margin-bottom: 26px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.oka-intro {
+  max-width: 56ch;
+  margin: -10px 0 30px;
+  color: var(--oka-redup);
+}
+.oka-prose {
+  max-width: 60ch;
+  color: #cfc8ae;
+}
+.oka-prose p + p {
+  margin-top: 14px;
+}
+.oka-tags {
+  margin-top: 8px;
+  color: var(--oka-lumut);
+  font-size: 0.92rem;
+}
+.oka-link {
+  color: var(--oka-kunyit);
+  text-underline-offset: 4px;
+}
+.oka-link:hover {
+  color: var(--oka-lontar);
+}
+
+/* Tentang dan kontak: daftar fakta, bukan kartu */
+.oka-about-grid,
+.oka-contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: start;
+}
+.oka-facts div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--oka-garis);
+}
+.oka-facts div:last-child {
+  border-bottom: 1px solid var(--oka-garis);
+}
+.oka-facts dt {
+  color: var(--oka-redup);
+  font-size: 0.95rem;
+}
+.oka-facts dd {
+  overflow-wrap: anywhere;
+}
+
+/* Skill: baris, bukan kartu */
+.oka-skill {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--oka-garis);
+}
+.oka-skill:last-child {
+  border-bottom: 1px solid var(--oka-garis);
+}
+.oka-skill h3 {
+  font-size: 1.9rem;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.oka-skill p:first-child {
+  max-width: 56ch;
+  color: #cfc8ae;
+}
+
+/* Proyek dan perjalanan: log bergaya riwayat commit */
+.oka-log {
+  position: relative;
+  margin-left: 8px;
+  padding-left: 34px;
+}
+.oka-log::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 0;
+  width: 2px;
+  background: var(--oka-garis);
+}
+.oka-log-item {
+  position: relative;
+  padding-bottom: 38px;
+}
+.oka-log-item:last-child {
+  padding-bottom: 0;
+}
+.oka-log-item::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -42px;
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--oka-kunyit);
+  border-radius: 50%;
+  background: var(--oka-batu);
+}
+.oka-log-alt::before {
+  border-color: var(--oka-lumut);
+}
+.oka-log-item h3 {
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+.oka-log-item > p:not(.oka-tags):not(.oka-status):not(.oka-date) {
+  max-width: 62ch;
+  margin-top: 6px;
+  color: #cfc8ae;
+}
+.oka-date {
+  color: var(--oka-kunyit);
+  font-size: 0.9rem;
+}
+.oka-status {
+  margin-top: 10px;
+  color: var(--oka-redup);
+  font-style: italic;
+}
+.oka-log-item .oka-link {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Footer */
+.oka-footer {
+  margin-top: 84px;
+  padding: 22px 0 32px;
+  color: var(--oka-redup);
+  font-size: 0.9rem;
+}
+.oka-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+.oka-footer a {
+  text-underline-offset: 4px;
+}
+.oka-footer a:hover {
+  color: var(--oka-kunyit);
+}
+
+@media (max-width: 860px) {
+  .oka-hero-grid,
+  .oka-about-grid,
+  .oka-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .oka-hero {
+    padding-top: 40px;
+  }
+  .oka-menu-btn {
+    display: block;
+  }
+  .oka-nav-links {
+    position: absolute;
+    top: calc(var(--oka-nav-h) + env(safe-area-inset-top, 0px));
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 14px;
+    background: var(--oka-batu);
+    border-bottom: 1px solid var(--oka-garis);
+  }
+  .oka-nav-links.oka-open {
+    display: flex;
+  }
+  .oka-nav-links a {
+    display: block;
+    padding: 12px 0;
+  }
+  .oka-skill {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+@media (max-width: 520px) {
+  body {
+    font-size: 16px;
+  }
+  .oka-container {
+    padding-inline: 18px;
+  }
+  .oka-section {
+    padding-top: 64px;
+  }
+  .oka-term-body {
+    height: 260px;
+  }
+  .oka-term-bar span:last-child {
+    display: none;
+  }
+  .oka-facts div {
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
