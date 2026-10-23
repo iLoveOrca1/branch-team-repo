@@ -1,0 +1,14 @@
+.team-section {
+  padding-top: 64px;
+}
+
+.team-intro {
+  margin: 12px 0 26px;
+  color: var(--mute);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}

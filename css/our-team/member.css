@@ -1,0 +1,98 @@
+.member-card {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    rgba(18, 23, 34, 0.96),
+    rgba(18, 23, 34, 0.72)
+  );
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.member-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--member-accent);
+  content: "";
+  opacity: 0.8;
+}
+
+.member-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--member-accent);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.2),
+    0 0 18px color-mix(in srgb, var(--member-accent) 12%, transparent);
+}
+
+.member-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.member-initials {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--member-accent) 65%, var(--line));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--member-accent) 12%, var(--panel));
+  color: var(--member-accent);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.member-commit {
+  color: var(--mute);
+  font-size: 11px;
+}
+
+.member-card h3 {
+  min-height: 2.8em;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.member-major {
+  min-height: 1.6em;
+  margin-top: 7px;
+  color: var(--mute);
+  font:
+    400 12px "JetBrains Mono",
+    monospace;
+}
+
+.member-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--member-accent);
+  font:
+    600 12px "JetBrains Mono",
+    monospace;
+  text-decoration: none;
+}
+
+.member-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.member-coming-soon {
+  color: var(--mute);
+  cursor: default;
+}
