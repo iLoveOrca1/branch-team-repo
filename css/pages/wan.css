@@ -103,6 +103,39 @@ ul {
   color: var(--wan-blue);
 }
 
+/* ===== Wan Back Link ===== */
+.wan-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 600 12px "JetBrains Mono", var(--wan-mono);
+  color: var(--wan-muted);
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--wan-line);
+  background: rgba(18, 23, 34, 0.6);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.wan-back-link:hover {
+  color: var(--wan-blue);
+  border-color: var(--wan-blue);
+  background: var(--wan-panel);
+  transform: translateX(-2px);
+}
+
+.wan-back-link svg {
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.wan-back-link:hover svg {
+  transform: translateX(-2px);
+}
+
 .wan-nav-links {
   display: flex;
   align-items: center;
@@ -196,7 +229,7 @@ ul {
 .wan-portrait-label,
 .wan-timeline time,
 .wan-skill-grid li span,
-.wan-life-card > div:last-child > span,
+.wan-life-card>div:last-child>span,
 .wan-footer {
   font-family: var(--wan-mono);
 }
@@ -215,7 +248,7 @@ ul {
   text-transform: uppercase;
 }
 
-.wan-status > span,
+.wan-status>span,
 .wan-hero-meta i {
   width: 8px;
   height: 8px;
@@ -310,7 +343,7 @@ ul {
   text-transform: uppercase;
 }
 
-.wan-hero-meta > span:first-child {
+.wan-hero-meta>span:first-child {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -419,10 +452,13 @@ ul {
 }
 
 @keyframes wan-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.35;
     transform: scale(0.8);
@@ -535,7 +571,7 @@ ul {
   line-height: 1.2;
 }
 
-.wan-about-card > p:not(.wan-card-label) {
+.wan-about-card>p:not(.wan-card-label) {
   margin-top: 15px;
   color: #c9d3e6;
   font-size: 0.92rem;
@@ -730,13 +766,13 @@ ul {
   white-space: nowrap;
 }
 
-.wan-timeline li > div {
+.wan-timeline li>div {
   position: relative;
   padding-left: 20px;
   border-left: 1px solid var(--wan-line);
 }
 
-.wan-timeline li > div::before {
+.wan-timeline li>div::before {
   position: absolute;
   top: 6px;
   left: -4px;
@@ -758,7 +794,7 @@ ul {
   font-size: 0.83rem;
 }
 
-.wan-timeline li > div > p:first-of-type {
+.wan-timeline li>div>p:first-of-type {
   color: var(--wan-muted);
 }
 
@@ -767,7 +803,7 @@ ul {
   border-block: 1px solid rgb(35 43 59 / 55%);
 }
 
-.wan-section-muted > .wan-container {
+.wan-section-muted>.wan-container {
   width: min(1160px, 100% - 48px);
 }
 
@@ -1042,7 +1078,7 @@ ul {
   letter-spacing: -0.05em;
 }
 
-.wan-project-copy > p:not(.wan-card-label) {
+.wan-project-copy>p:not(.wan-card-label) {
   max-width: 44ch;
   margin-top: 12px;
   color: #c9d3e6;
@@ -1198,7 +1234,7 @@ ul {
   }
 
   .wan-container,
-  .wan-section-muted > .wan-container {
+  .wan-section-muted>.wan-container {
     width: min(100% - 36px, 560px);
   }
 
@@ -1242,7 +1278,7 @@ ul {
     margin-left: auto;
   }
 
-  .wan-menu-btn + nav + .wan-nav-cta {
+  .wan-menu-btn+nav+.wan-nav-cta {
     margin-left: auto;
   }
 
@@ -1358,8 +1394,9 @@ ul {
 }
 
 @media (max-width: 420px) {
+
   .wan-container,
-  .wan-section-muted > .wan-container {
+  .wan-section-muted>.wan-container {
     width: min(100% - 28px, 560px);
   }
 
@@ -1377,7 +1414,7 @@ ul {
     gap: 7px;
   }
 
-  .wan-timeline li > div {
+  .wan-timeline li>div {
     padding-left: 14px;
   }
 
@@ -1392,6 +1429,7 @@ ul {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

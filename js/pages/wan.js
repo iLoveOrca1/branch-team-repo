@@ -1,3 +1,7 @@
+import { initCustomCursor } from "../modules/customCursor.js";
+
+initCustomCursor();
+
 (function () {
   'use strict';
 
