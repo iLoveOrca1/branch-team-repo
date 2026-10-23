@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0d14" />
+    <meta
+      name="description"
+      content="Portofolio Pribadi I Made Gilang Pradnyananda - Mahasiswa Teknologi Rekayasa Perangkat Lunak (TRPL) Undiksha & Anggota Branch Team."
+    />
+    <title>I Made Gilang Pradnyananda | Portofolio TRPL</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pages/gilang.css" />
+
+    <style>
+      canvas {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+    <span class="custom-cursor-dot" id="customCursorDot" aria-hidden="true"></span>
+
+    <!-- Interactive Background Particles Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- === NAVBAR === -->
+    <header class="nav" id="nav">
+      <div class="container">
+        <a href="../index.html" class="nav-back-link" title="Kembali ke Halaman Tim">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Branch Team</span>
+        </a>
+
+        <button
+          class="menu-btn"
+          id="navToggle"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+
+        <nav aria-label="Navigasi portofolio">
+          <ul class="links" id="navLinks">
+            <li><a href="#home">beranda</a></li>
+            <li><a href="#about">tentang</a></li>
+            <li><a href="#skills">keahlian</a></li>
+            <li><a href="#certs">certification</a></li>
+            <li><a href="#experience">pengalaman</a></li>
+            <li><a href="#contact">kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="bar" id="bar" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <!-- === 1. HERO SECTION === -->
+      <section class="hero hero-gilang" id="home">
+        <div class="container hero-grid">
+          <div>
+            <p class="term"><i>$</i> git checkout -b branch-gilang</p>
+            <h1>I Made <em>Gilang</em> Pradnyananda</h1>
+            <p class="role-line"><span id="typed" data-roles='["Software Engineering Student (TRPL)", "Lv.1 Crook", "CTF Player", "Network Engineer"]'></span><span class="caret" aria-hidden="true"></span></p>
+            <p class="lead">
+              Mahasiswa Teknologi Rekayasa Perangkat Lunak (TRPL) yang antusias merancang, membangun, dan mengoptimasi aplikasi web modern dari struktur basis data hingga antarmuka pengguna yang responsif.
+            </p>
+            <div class="cta">
+              <a class="btn accent" href="#certs">Lihat Proyek</a>
+              <a class="btn" href="#contact">Hubungi Saya</a>
+              <a class="btn" href="../index.html">← Profil Tim</a>
+            </div>
+            <div class="socials" aria-label="Media sosial Gilang">
+              <a href="https://github.com/iLoveOrca1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" onclick="return false">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3zM9.5 9.75h3.83v1.57h.05c.53-1 1.84-2.07 3.79-2.07 4.05 0 4.8 2.67 4.8 6.13v5.87h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4z"/>
+                </svg>
+              </a>
+              <a href="mailto:gilang@example.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <path d="m3 7 9 6 9-6"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+            <div class="terminal-box">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="terminal-title">gilang@trpl-dev: ~/profile</div>
+              </div>
+              <div class="terminal-body">
+                <div class="term-row">
+                  <span class="term-key">Nama Lengkap</span>
+                  <span class="term-val highlight">I Made Gilang Pradnyananda</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Dev Name</span>
+                  <span class="term-val highlight">iLoveOrca1</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Program Studi</span>
+                  <span class="term-val">TRPL (Rekayasa Perangkat Lunak)</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Uni</span>
+                  <span class="term-val">Universitas Pendidikan Ganesha</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Git Branch</span>
+                  <span class="term-val branch">branch gilang</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Fokus Utama</span>
+                  <span class="term-val">Jarkom - Pentesting</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Prinsip Kerja</span>
+                  <span class="term-val">"Create, Commit, Repeat"</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Domisili</span>
+                  <span class="term-val">Bali, Indonesia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- === 2. ABOUT SECTION === -->
+      <section class="about-section" id="about">
+        <div class="container">
+          <p class="eyebrow">git show gilang:bio.md</p>
+          <h2 class="section-title">Dedikasi untuk Rekayasa Perangkat Lunak.</h2>
+
+          <div class="about-grid-gilang" style="margin-top: 28px;">
+            <div class="terminal-box">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="terminal-title">root@trpl-dev:~#</div>
+              </div>
+              <div class="terminal-body">
+                <div class="term-row">
+                  <span class="term-key">root@trpl-dev:~# </span>
+                  <span class="term-val highlight">whoami</span>
+                </div>
+
+                <div class="term-row">
+                  <span class="term-val">I Made Gilang Pradnyananda</span>
+                </div>
+
+                <div class="term-row">
+                  <span class="term-key">root@trpl-dev:~# </span>
+                  <span class="term-val highlight">echo $HOBBY</span>
+                </div>
+
+                <div class="term-row">
+                  <span class="term-val">CTF!! && Coding!! && Tech!!</span>
+                </div>
+
+                <div class="term-row">
+                  <span class="term-key">root@trpl-dev:~# </span>
+                  <span class="term-val highlight">cat intro.txt</span>
+                </div>
+
+                <div class="term-row">
+                  <span class="term-val">
+                    Halo! Saya Gilang, seorang tech enthusiast yang dulunya sibuk ngurusin kabel, routing, dan Linux server, kini melebarkan sayap ke dunia cyber security dan programming.
+                    <br><br>
+                    Saya percaya bahwa pemahaman jaringan yang kuat adalah kunci untuk membangun software yang tangguh sekaligus mengenali celah keamanannya. Suka bereksperimen dengan homelab, ngulik scripting, dan terus belajar hal baru setiap hari. Progressive in thought, total in execution!
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- === 3. SKILLS SECTION === -->
+      <section class="skills-section" id="skills">
+        <div class="container">
+          <p class="eyebrow">git config --get-regexp user.skills</p>
+          <h2 class="section-title">Ekosistem Teknologi.</h2>
+          <p class="section-desc">
+            Alumni TKJ, berpengalaman dalam menangani kasus jaringan, devops, dan offsec.
+          </p>
+
+          <div class="skills-grid">
+            <!-- DevOps Card -->
+            <article class="skill-card" style="--card-accent: var(--c0)">
+              <div class="skill-card-head">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <polyline points="16 11 18 13 22 9"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Network Engineering</h3>
+                  <p>Firewall & Routing </p>
+                </div>
+              </div>
+              <p>
+                Merancang arsitektur jaringan berbasis LAN/WAN dengan efisien, ekonomis, dan andal. Familiar dengan teknik traffic control seperti firewall. 
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">MikroTik</span>
+                <span class="skill-tag">Cisco</span>
+                <span class="skill-tag">OSPF</span>
+                <span class="skill-tag">NAT</span>
+                <span class="skill-tag">VLAN</span>
+                <span class="skill-tag">Firewall</span>
+              </div>
+            </article>
+
+            <!-- Backend Card -->
+            <article class="skill-card" style="--card-accent: var(--gilang-accent)">
+              <div class="skill-card-head">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Sys Admin</h3>
+                  <p>Server, Automation, Virtualization</p>
+                </div>
+              </div>
+              <p>
+                Membangun endpoint layanan web yang aman, terstruktur, serta mengintegrasikan logika aplikasi yang efisien.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Ubuntu</span>
+                <span class="skill-tag">RHEL</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Qemu</span>
+                <span class="skill-tag">Proxmox</span>
+                <span class="skill-tag">OpenSSH</span>
+              </div>
+            </article>
+
+            <!-- Database Card -->
+            <article class="skill-card" style="--card-accent: var(--c3)">
+              <div class="skill-card-head">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Cybersecurity</h3>
+                  <p>Offsec, Kali, CTF</p>
+                </div>
+              </div>
+              <p>
+                Memastikan blue team tidak kewalahan menghadapi skenario serangan yang sesungguhnya.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Kali Linux</span>
+                <span class="skill-tag">BurpSuite</span>
+                <span class="skill-tag">Nmap</span>
+                <span class="skill-tag">John</span>
+                <span class="skill-tag">Python</span>
+              </div>
+            </article>
+        </div>
+      </section>
+
+      <!-- === 4. PROJECTS SECTION === -->
+      <section class="projects-section" id="certs">
+        <div class="container">
+          <p class="eyebrow">git log --graph --oneline projects/</p>
+          <h2 class="section-title">Certified Hood Classic.</h2>
+          <p class="section-desc">
+            Sertifikasi sebagai wujud nyata kompetensi dalam suatu bidang.
+          </p>
+
+          <div class="project-filters" aria-label="Filter kategori certs">
+            <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+            <button class="filter-btn" data-filter="jarkom">Jarkom</button>
+            <button class="filter-btn" data-filter="cyber">Cyber</button>
+            <button class="filter-btn" data-filter="sysadmin">SysAdmin</button>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1: MTCNA -->
+            <article class="project-card" data-category="jarkom" style="--proj-accent: var(--c0)">
+              <div class="project-top">
+                <span class="project-hash">commit 9c4a8b1</span>
+                <span class="project-branch">mtcna</span>
+              </div>
+              <div class="project-body">
+                <h3>MTCNA</h3>
+                <p>
+                  Sertifikasi jaringan dasar dari MikroTik. Sertifikasi ini mencakup dasar-dasar firewall, routing, switching, subnetting, jaringan area luas (WAN) dan beberapa mengenai produk MikroTik.
+                </p>
+                <div class="project-tech">
+                  <span>MikroTik</span>
+                  <span>Firewall</span>
+                  <span>Routing</span>
+                  <span>Switching</span>
+                  <span>Subnetting</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a class="project-link" target="_blank" rel="noopener noreferrer" href="https://mikrotik.com/training/certificates/c507447c8b9512d8b158">
+                  Lihat Sertifikat <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: QuickPoint POS System -->
+            <article class="project-card" data-category="jarkom" style="--proj-accent: var(--c3)">
+              <div class="project-top">
+                <span class="project-hash">commit 4f2e98c</span>
+                <span class="project-branch">mtctce</span>
+              </div>
+              <div class="project-body">
+                <h3>MTCTCE</h3>
+                <p>
+                  Sertifikasi yang lebih mendalami terhadap traffic control. Sertifikasi ini mencakup topik seperti NAT, firewall mangle, Quality of Service, advanced DHCP, dan DNS dalam MikroTik.
+                </p>
+                <div class="project-tech">
+                  <span>MikroTik</span>
+                  <span>Firewall Mangle</span>
+                  <span>QoS</span>
+                  <span>Advanced DHCP</span>
+                  <span>NAT</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a class="project-link" target="_blank" rel="noopener noreferrer" href="https://mikrotik.com/training/certificates/c507505ce40a74e2f905">
+                  Lihat Sertifikat <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- === 5. EXPERIENCE & JOURNEY SECTION === -->
+      <section class="experience-section" id="experience">
+        <div class="container">
+          <p class="eyebrow">git log --reverse --pretty=format:"%h - %cd : %s"</p>
+          <h2 class="section-title">Perjalanan & Rekam Jejak.</h2>
+          <p class="section-desc">
+            Riwayat pendidikan formal, partisipasi bootcamp, serta dedikasi dalam menempa kematangan teknis.
+          </p>
+
+          <div class="commits" id="experience-commits">
+            <svg class="cg" id="experience-cg" aria-hidden="true"></svg>
+            <p class="branch-tag t"><i>$</i> git switch -c rekam-jejak</p>
+
+            <article class="cm">
+              <div class="proj">
+                <div>
+                  <h3 class="title" data-a>feat: mahasiswa teknologi rekayasa perangkat lunak</h3>
+                  <p class="desc">
+                    Menempuh studi sarjana terapan di Universitas Pendidikan Ganesha (Undiksha). Mendalami fondasi software engineering, algoritma, perancangan basis data relasional, paradigma OOP, dan clean architecture.
+                  </p>
+                  <div class="meta">
+                    <b>c1a08e4</b>
+                    <span>2026 – Sekarang</span>
+                    <span>Undiksha · Bali</span>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">TRPL</span>
+                    <span class="tag">Software Engineering</span>
+                    <span class="tag">Database</span>
+                    <span class="tag">OOP</span>
+                  </div>
+                  <div class="links2">
+                    <a href="https://undiksha.ac.id" target="_blank" rel="noopener noreferrer">kampus ↗</a>
+                  </div>
+                </div>
+                <div class="thumb" style="--c:var(--c0)" aria-hidden="true">
+                  <span>trpl.undiksha</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="cm">
+              <div class="proj">
+                <div>
+                  <h3 class="title" data-a>feat: junior network technician &amp; globalxtreme</h3>
+                  <p class="desc">
+                    Disini, saya mendapatkan beberapa pengalaman dalam industri penyedia layanan jaringan seperti: Troubleshooting dan maintenance jaringan lokal. LAN wiring dan instalasi perangkat jaringan. Setup dan deployment wireless hotspot.
+                  </p>
+                  <div class="meta">
+                    <b>8f24b91</b>
+                    <span>2025</span>
+                    <span>Globalxtreme · Bali</span>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">Wireless</span>
+                    <span class="tag">LAN Wiring</span>
+                    <span class="tag">Ruijie</span>
+                    <span class="tag">Ubiquiti</span>
+                  </div>
+                  <div class="links2">
+                    <a href="https://globalxtreme.net/" target="_blank" rel="noopener noreferrer">visit ↗</a>
+                  </div>
+                </div>
+                <div class="thumb" style="--c:var(--c2)" aria-hidden="true">
+                  <span>globalxtreme</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="cm">
+              <div class="proj">
+                <div>
+                  <h3 class="title" data-a>chore: eksplorasi software &amp; riset jarkom / pentesting</h3>
+                  <p class="desc">
+                    Masih secara aktif bermain CTF, HTB Labs, dan menjadi probset untuk berbagai lomba jaringan berbasis Cisco Packet Tracer.
+                  </p>
+                  <div class="meta">
+                    <b>3d719e0</b>
+                    <span>2025 – Sekarang</span>
+                    <span>Personal Lab</span>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">Networking</span>
+                    <span class="tag">Pentesting</span>
+                    <span class="tag">Linux</span>
+                  </div>
+                  <div class="links2">
+                    <a href="https://github.com/iLoveOrca1" target="_blank" rel="noopener noreferrer">lihat proyek ↗</a>
+                  </div>
+                </div>
+                <div class="thumb" style="--c:var(--c3)" aria-hidden="true">
+                  <span>dev.pentest</span>
+                </div>
+              </div>
+            </article>
+
+            <p class="branch-tag b"><i>$</i> git merge rekam-jejak</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- === 6. CONTACT SECTION === -->
+      <section class="contact-section" id="contact">
+        <div class="container">
+          <p class="eyebrow">git remote -v && ping contact</p>
+          <h2 class="section-title">Mari Terhubung & Berkolaborasi.</h2>
+          <p class="section-desc">
+            Punya ide proyek, diskusi teknis mengenai software engineering, atau tawaran kerja sama? Jangan ragu untuk menyapa!
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-cards">
+              <!-- Email Card -->
+              <a class="contact-card" href="mailto:gilang@example.com" id="copyEmailBtn" data-email="gilang@example.com">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                    <polyline points="3 7 12 13 21 7"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-label">Kirim Surel / Salin</div>
+                  <div class="contact-value">iloveorcadev@gmail.com</div>
+                </div>
+                <div class="contact-arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <!-- GitHub Card -->
+              <a class="contact-card" href="https://github.com/iLoveOrca1" target="_blank" rel="noopener noreferrer">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-label">Repositori Kode</div>
+                  <div class="contact-value">github.com/iLoveOrca1</div>
+                </div>
+                <div class="contact-arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <!-- Lokasi Card -->
+              <div class="contact-card" style="cursor: default;">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-label">Lokasi Domisili</div>
+                  <div class="contact-value">Bali, Indonesia</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Message Form -->
+            <div class="contact-form-box">
+              <h3>Kirim Pesan Singkat</h3>
+              <p>Tinggalkan pesan Anda di bawah ini, saya akan merespons secepatnya.</p>
+              <form id="contactForm">
+                <div class="form-group">
+                  <label class="form-label" for="formName">Nama Anda</label>
+                  <input class="form-input" type="text" id="formName" required placeholder="Contoh: Raka Satria" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="formEmail">Alamat Email</label>
+                  <input class="form-input" type="email" id="formEmail" required placeholder="nama@domain.com" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="formMessage">Pesan atau Diskusi</label>
+                  <textarea class="form-textarea" id="formMessage" required placeholder="Tuliskan pesan atau ide Anda..."></textarea>
+                </div>
+                <button class="btn accent form-submit" type="submit">Kirim Pesan</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- === FOOTER === -->
+    <footer>
+      <div class="container">
+        <span class="root-dot" aria-hidden="true"></span>
+        <span class="mono"><span class="hash">g114ng7</span> · branch-gilang ready</span>
+        <span>© <span id="year"></span> I Made Gilang Pradnyananda — Branch Team</span>
+      </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script type="module" src="../js/main.js"></script>
+    <script src="../js/pages/gilang.js" defer></script>
+    <script src="../js/lib/particle/particle.js" defer></script>
+  </body>
+</html>

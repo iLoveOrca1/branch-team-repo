@@ -1,18 +1,20 @@
+// Warna aksen dari tema situs
+// const accentColors = [
+//   "rgba(88,166,255,", // --c0 biru
+//   "rgba(255,123,114,", // --c1 merah
+//   "rgba(242,204,96,", // --c2 kuning
+//   "rgba(126,231,135,", // --c3 hijau
+//   "rgba(210,168,255,", // --c4 ungu
+// ];
+
+const accentColors = ["rgba(35, 43, 59,"];
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particleArray;
-
-// Warna aksen dari tema situs
-const accentColors = [
-  "rgba(88,166,255,", // --c0 biru
-  "rgba(255,123,114,", // --c1 merah
-  "rgba(242,204,96,", // --c2 kuning
-  "rgba(126,231,135,", // --c3 hijau
-  "rgba(210,168,255,", // --c4 ungu
-];
 
 // get mouse current position
 let mouse = {
@@ -90,7 +92,7 @@ function init() {
   const demultiplier = 40000;
   let numberOfParticles = (canvas.height * canvas.width) / demultiplier;
   for (let i = 0; i < numberOfParticles; i++) {
-    let size = Math.random() * 3 + 1;
+    let size = Math.random() * 4 + 1;
     let x = Math.random() * (innerWidth - size * 2 - size * 2) + size * 2;
     let y = Math.random() * (innerHeight - size * 2 - size * 2) + size * 2;
     // Kecepatan lebih pelan untuk gerakan yang halus
@@ -150,3 +152,5 @@ window.addEventListener("mouseout", function () {
 
 init();
 animate();
+
+
