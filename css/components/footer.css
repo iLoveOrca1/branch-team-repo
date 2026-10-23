@@ -1,0 +1,36 @@
+footer {
+  margin-top: 72px;
+  border-top: 1px solid var(--line);
+  padding: 26px 0 36px;
+  color: var(--mute);
+  font-size: 13px;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+}
+
+.root-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--c0);
+  background: var(--bg);
+  flex: none;
+}
+
+footer .hash {
+  color: var(--c0);
+  font-weight: 600;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
