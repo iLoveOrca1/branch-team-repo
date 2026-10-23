@@ -1,14 +1,6 @@
 let reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export function typeEffect() {
-  const roles = [
-    "We're Branch Team",
-    "I Made Gilang Pradnyananda",
-    "I Ketut Dharmawan",
-    // "Ignatius Raka Satria Dewa | Ilkom",
-    "I Kadek Oka Santika",
-    "Kadek Keisya Vinanda",
-  ];
+export function typeEffect(roles) {
   let el = document.getElementById("typed");
   console.log(el);
   if (reduce) {

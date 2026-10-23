@@ -4,6 +4,7 @@
 @import url('./components/about.css');
 @import url('./our-team/member.css');
 @import url('./our-team/team.css');
+@import url('./components/gitgraph.css');
 
 :root {
   /* Tema Warna*/

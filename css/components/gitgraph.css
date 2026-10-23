@@ -1,0 +1,104 @@
+/* ===== Rail mini (desktop lebar): git graph navigasi di margin kiri ===== */
+.mm {
+  display: none;
+  position: fixed;
+  z-index: 40;
+  top: 50%;
+  transform: translateY(-50%);
+  left: max(10px, calc(40% - 520px - 62px));
+  width: 44px;
+  height: min(58vh, 360px);
+}
+.mm-line {
+  position: absolute;
+  left: 11px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+  border-radius: 2px;
+}
+.mm-fill {
+  position: absolute;
+  left: 11px;
+  top: 0;
+  width: 2px;
+  height: 0;
+  border-radius: 2px;
+  background: linear-gradient(var(--c0), var(--c3));
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.55);
+  transition: height 0.15s linear;
+}
+/* lengkung cabang: keluar dari node Proyek, kembali di node Pengalaman */
+.mm-branch {
+  position: absolute;
+  left: 11px;
+  width: 18px;
+  top: calc(60% - 1px);
+  height: calc(20% + 2px);
+  border: 2px solid var(--c3);
+  border-left: 0;
+  border-radius: 0 12px 12px 0;
+  opacity: 0.25;
+  transition: opacity 0.35s;
+}
+.mm-branch.on {
+  opacity: 1;
+  filter: drop-shadow(0 0 5px rgba(126, 231, 135, 0.45));
+}
+.mm-node {
+  position: absolute;
+  left: 5px;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid #3a4560;
+  transition:
+    border-color 0.25s,
+    background 0.25s,
+    box-shadow 0.25s,
+    transform 0.25s;
+}
+.mm-node.passed {
+  border-color: var(--c0);
+}
+.mm-node.active {
+  background: var(--c0);
+  box-shadow:
+    0 0 0 4px rgba(88, 166, 255, 0.2),
+    0 0 12px rgba(88, 166, 255, 0.6);
+  transform: scale(1.12);
+}
+.mm-node::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  font:
+    600 11px/1 "JetBrains Mono",
+    monospace;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+.mm-node:hover::after,
+.mm-node:focus-visible::after {
+  opacity: 1;
+}
+@media (min-width: 1180px) {
+  .mm {
+    display: block;
+  }
+  .bar {
+    display: none;
+  }
+}

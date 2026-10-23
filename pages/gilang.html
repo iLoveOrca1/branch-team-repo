@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0d14" />
+    <meta
+      name="description"
+      content="Portofolio Pribadi I Made Gilang Pradnyananda - Mahasiswa Teknologi Rekayasa Perangkat Lunak (TRPL) Undiksha & Anggota Branch Team."
+    />
+    <title>I Made Gilang Pradnyananda | Portofolio TRPL</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pages/gilang.css" />
+
+    <style>
+      canvas {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+    <span class="custom-cursor-dot" id="customCursorDot" aria-hidden="true"></span>
+
+    <!-- Interactive Background Particles Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- === NAVBAR === -->
+    <header class="nav" id="nav">
+      <div class="container">
+        <a href="#home" class="logo">Gilang<em>.dev</em></a>
+
+        <a href="../index.html" class="nav-back-link" title="Kembali ke Halaman Tim">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Branch Team</span>
+        </a>
+
+        <button
+          class="menu-btn"
+          id="navToggle"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+
+        <nav aria-label="Navigasi portofolio">
+          <ul class="links" id="navLinks">
+            <li><a href="#home">beranda</a></li>
+            <li><a href="#about">tentang</a></li>
+            <li><a href="#skills">keahlian</a></li>
+            <li><a href="#projects">proyek</a></li>
+            <li><a href="#experience">pengalaman</a></li>
+            <li><a href="#contact">kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="bar" id="bar" aria-hidden="true"></div>
+    </header>
+
+    <!-- === MINI-MAP GIT-GRAPH NAVIGATION (DESKTOP) === -->
+    <nav class="mm" aria-label="Peta navigasi Git">
+      <div class="mm-line"></div>
+      <div class="mm-fill" id="mmFill"></div>
+      <div class="mm-branch" id="mmBranch"></div>
+      <a class="mm-node" href="#home" style="top: 0%" data-label="f08a1c3 · beranda" aria-label="Beranda"></a>
+      <a class="mm-node" href="#about" style="top: 20%" data-label="2b7d9e5 · tentang" aria-label="Tentang"></a>
+      <a class="mm-node" href="#skills" style="top: 40%" data-label="94c3a61 · keahlian" aria-label="Keahlian"></a>
+      <a class="mm-node" href="#projects" style="top: 60%" data-label="d51e0f8 · proyek" aria-label="Proyek"></a>
+      <a class="mm-node" href="#experience" style="top: 80%" data-label="6a8b2c7 · pengalaman" aria-label="Pengalaman"></a>
+      <a class="mm-node" href="#contact" style="top: 100%" data-label="3f19d4e · kontak" aria-label="Kontak"></a>
+    </nav>
+
+    <main>
+      <!-- === 1. HERO SECTION === -->
+      <section class="hero hero-gilang" id="home">
+        <div class="container hero-grid">
+          <div>
+            <p class="term"><i>$</i> git checkout -b branch-gilang</p>
+            <h1>I Made <em>Gilang</em> Pradnyananda</h1>
+            <p class="role-line"><span id="typed"></span><span class="caret" aria-hidden="true"></span></p>
+            <p class="lead">
+              Mahasiswa Teknologi Rekayasa Perangkat Lunak (TRPL) yang antusias merancang, membangun, dan mengoptimasi aplikasi web modern dari struktur basis data hingga antarmuka pengguna yang responsif.
+            </p>
+            <div class="cta">
+              <a class="btn accent" href="#projects">Lihat Proyek</a>
+              <a class="btn" href="#contact">Hubungi Saya</a>
+              <a class="btn" href="../index.html">← Profil Tim</a>
+            </div>
+            <div class="socials" aria-label="Media sosial Gilang">
+              <a href="https://github.com/iLoveOrca1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" onclick="return false">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3zM9.5 9.75h3.83v1.57h.05c.53-1 1.84-2.07 3.79-2.07 4.05 0 4.8 2.67 4.8 6.13v5.87h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4z"/>
+                </svg>
+              </a>
+              <a href="mailto:gilang@example.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <path d="m3 7 9 6 9-6"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+            <div class="terminal-box">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="terminal-title">gilang@trpl-dev: ~/profile</div>
+              </div>
+              <div class="terminal-body">
+                <div class="term-row">
+                  <span class="term-key">Nama Lengkap</span>
+                  <span class="term-val highlight">I Made Gilang Pradnyananda</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Dev Name</span>
+                  <span class="term-val highlight">iLoveOrca1</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Program Studi</span>
+                  <span class="term-val">TRPL (Rekayasa Perangkat Lunak)</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Uni</span>
+                  <span class="term-val">Universitas Pendidikan Ganesha</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Git Branch</span>
+                  <span class="term-val branch">branch gilang</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Fokus Utama</span>
+                  <span class="term-val">Jarkom - Pentesting</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Prinsip Kerja</span>
+                  <span class="term-val">"Create, Commit, Repeat"</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Domisili</span>
+                  <span class="term-val">Bali, Indonesia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- === 2. ABOUT SECTION === -->
+      <section class="about-section" id="about">
+        <div class="container">
+          <p class="eyebrow">git show gilang:bio.md</p>
+          <h2 class="section-title">Dedikasi untuk Rekayasa Perangkat Lunak.</h2>
+
+          <div class="about-grid-gilang" style="margin-top: 28px;">
+            <div class="about-text">
+              <p>
+                Halo! Saya <strong>I Made Gilang Pradnyananda</strong>, mahasiswa Program Studi <strong>Teknologi Rekayasa Perangkat Lunak (TRPL)</strong> di Universitas Pendidikan Ganesha (Undiksha). Saya memiliki minat mendalam pada pengembangan perangkat lunak modern, arsitektur web full-stack, serta implementasi kode yang bersih dan terstruktur.
+              </p>
+              <p>
+                Bagi saya, rekayasa perangkat lunak bukan sekadar menulis sintaks, melainkan seni memecahkan masalah nyata. Dari merancang basis data relasional yang efisien hingga membangun antarmuka web yang intuitif dan cepat, saya selalu berorientasi pada ketelitian dan pengalaman pengguna.
+              </p>
+              <p>
+                Sebagai bagian dari <strong>Branch Team</strong> pada Integer IT Bootcamp, saya aktif berkolaborasi menggunakan alur kerja Git, merangkai modul mandiri, dan berkontribusi menghadirkan solusi digital yang solid.
+              </p>
+            </div>
+
+            <div class="terminal-box">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="terminal-title">gilang@trpl-dev: ~/profile</div>
+              </div>
+              <div class="terminal-body">
+                <div class="term-row">
+                  <span class="term-key">Nama Lengkap</span>
+                  <span class="term-val highlight">I Made Gilang Pradnyananda</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Program Studi</span>
+                  <span class="term-val">TRPL (Rekayasa Perangkat Lunak)</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Perguruan Tinggi</span>
+                  <span class="term-val">Universitas Pendidikan Ganesha</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Git Branch</span>
+                  <span class="term-val branch">branch gilang</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Fokus Utama</span>
+                  <span class="term-val">Full-Stack Web & Software Engineering</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Prinsip Kerja</span>
+                  <span class="term-val">"Create, Commit, Repeat"</span>
+                </div>
+                <div class="term-row">
+                  <span class="term-key">Domisili</span>
+                  <span class="term-val">Bali, Indonesia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlight Metric Strip -->
+          <div class="stats-strip">
+            <div class="stat-item">
+              <div class="stat-num">TRPL</div>
+              <div class="stat-label">Program Studi Sarjana Terapan</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">Full-Stack</div>
+              <div class="stat-label">Web & API Architecture</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">Git-Flow</div>
+              <div class="stat-label">Kolaborasi & Branch Control</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Komitmen pada Clean Code</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === 3. SKILLS SECTION === -->
+      <section class="skills-section" id="skills">
+        <div class="container">
+          <p class="eyebrow">git config --get-regexp user.skills</p>
+          <h2 class="section-title">Keahlian & Ekosistem Teknologi.</h2>
+          <p class="section-desc">
+            Kombinasi bahasa pemrograman, kerangka kerja, dan perkakas yang saya gunakan untuk mentransformasikan konsep menjadi solusi perangkat lunak yang tangguh.
+          </p>
+
+          <div class="skills-grid">
+            <!-- Frontend Card -->
+            <article class="skill-card" style="--card-accent: var(--c0)">
+              <div class="skill-card-head">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Frontend Engineering</h3>
+                  <p>Antarmuka responsif & interaktif</p>
+                </div>
+              </div>
+              <p>
+                Merancang antarmuka web modern dengan kode semantik, performa tinggi, dan aksesibilitas ramah pengguna.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">HTML5 Semantic</span>
+                <span class="skill-tag">CSS3 / Flexbox & Grid</span>
+                <span class="skill-tag">Modern JavaScript (ES6+)</span>
+                <span class="skill-tag">DOM Manipulation</span>
+                <span class="skill-tag">Responsive Design</span>
+              </div>
+            </article>
+
+            <!-- Backend Card -->
+            <article class="skill-card" style="--card-accent: var(--gilang-accent)">
+              <div class="skill-card-head">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Backend & Web Services</h3>
+                  <p>Logika bisnis & RESTful APIs</p>
+                </div>
+              </div>
+              <p>
+                Membangun endpoint layanan web yang aman, terstruktur, serta mengintegrasikan logika aplikasi yang efisien.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express.js</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">Authentication / JWT</span>
+                <span class="skill-tag">MVC Architecture</span>
+              </div>
+            </article>
+
+            <!-- Database Card -->
+            <article class="skill-card" style="--card-accent: var(--c3)">
+              <div class="skill-card-head">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Basis Data & Data Modeling</h3>
+                  <p>Penyimpanan terstruktur & efisien</p>
+                </div>
+              </div>
+              <p>
+                Mendesain skema basis data relasional dengan normalisasi ketat, integritas relasi tabel, dan optimasi kueri.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">Relational Database</span>
+                <span class="skill-tag">SQL Query Optimization</span>
+                <span class="skill-tag">Database Normalization</span>
+              </div>
+            </article>
+
+            <!-- Tools & Workflow Card -->
+            <article class="skill-card" style="--card-accent: var(--c4)">
+              <div class="skill-card-head">
+                <div class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Tools & Engineering Workflow</h3>
+                  <p>Alur kerja kolaboratif & otomasi</p>
+                </div>
+              </div>
+              <p>
+                Memanfaatkan version control Git, sistem operasi Linux, serta perkakas pengujian API untuk alur kerja yang terstandarisasi.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">Linux / Bash CLI</span>
+                <span class="skill-tag">Vite / NPM Tooling</span>
+                <span class="skill-tag">Postman API Testing</span>
+                <span class="skill-tag">Figma Integration</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- === 4. PROJECTS SECTION === -->
+      <section class="projects-section" id="projects">
+        <div class="container">
+          <p class="eyebrow">git log --graph --oneline projects/</p>
+          <h2 class="section-title">Karya & Proyek Terpilih.</h2>
+          <p class="section-desc">
+            Eksplorasi dan implementasi nyata dari baris kode awal hingga rilis, mencakup aplikasi web, sistem manajemen, dan visualisasi interaktif.
+          </p>
+
+          <div class="project-filters" aria-label="Filter kategori proyek">
+            <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+            <button class="filter-btn" data-filter="web">Web Application</button>
+            <button class="filter-btn" data-filter="frontend">Frontend / UI</button>
+            <button class="filter-btn" data-filter="system">Sistem Informasi</button>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1: Branch Team Hub -->
+            <article class="project-card" data-category="web frontend" style="--proj-accent: var(--c0)">
+              <div class="project-top">
+                <span class="project-hash">commit 9c4a8b1</span>
+                <span class="project-branch">branch-team-hub</span>
+              </div>
+              <div class="project-body">
+                <h3>Branch Team Hub</h3>
+                <p>
+                  Situs profil tim kolaboratif IT Bootcamp dengan alur kerja Git modern, menyajikan navigasi git-graph interaktif, efek typewriter, dan latar belakang partikel kanvas yang ringan.
+                </p>
+                <div class="project-tech">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>Vanilla JS</span>
+                  <span>Canvas API</span>
+                  <span>GitHub</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a class="project-link" href="../index.html">
+                  Lihat Beranda Tim <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2: Portal Akademik TRPL -->
+            <article class="project-card" data-category="web system" style="--proj-accent: var(--gilang-accent)">
+              <div class="project-top">
+                <span class="project-hash">commit e71d45a</span>
+                <span class="project-branch">siakad-trpl-lite</span>
+              </div>
+              <div class="project-body">
+                <h3>Portal Akademik TRPL</h3>
+                <p>
+                  Aplikasi web manajemen perkuliahan untuk rekap tugas, jadwal perkuliahan, dan pengingat deadline praktikum berbasis arsitektur model-view-controller dengan basis data relasional.
+                </p>
+                <div class="project-tech">
+                  <span>JavaScript</span>
+                  <span>Node.js / Express</span>
+                  <span>MySQL</span>
+                  <span>REST API</span>
+                  <span>CSS Grid</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a class="project-link" href="#contact">
+                  Detail Arsitektur <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: QuickPoint POS System -->
+            <article class="project-card" data-category="web system" style="--proj-accent: var(--c3)">
+              <div class="project-top">
+                <span class="project-hash">commit 4f2e98c</span>
+                <span class="project-branch">pos-inventory</span>
+              </div>
+              <div class="project-body">
+                <h3>QuickPoint POS & Kasir</h3>
+                <p>
+                  Sistem pencatatan inventaris dan transaksi kasir modern dengan pencarian barang kilat, kalkulasi pajak otomatis, manajemen stok terpadu, dan cetak struk digital.
+                </p>
+                <div class="project-tech">
+                  <span>Vanilla JS</span>
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>Local Storage</span>
+                  <span>Tailored CSS</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a class="project-link" href="#contact">
+                  Eksplorasi Fitur <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: GitVisualizer Interactive Lab -->
+            <article class="project-card" data-category="frontend" style="--proj-accent: var(--c4)">
+              <div class="project-top">
+                <span class="project-hash">commit a83b62d</span>
+                <span class="project-branch">git-visualizer</span>
+              </div>
+              <div class="project-body">
+                <h3>GitVisualizer Simulator</h3>
+                <p>
+                  Laboratorium interaktif visualisasi konsep Git (commit tree, branch switching, merge, dan cherry-pick) berbasis HTML5 Canvas untuk membantu mahasiswa memahami alur Git dengan mudah.
+                </p>
+                <div class="project-tech">
+                  <span>Canvas API</span>
+                  <span>Modern JS</span>
+                  <span>Data Structures</span>
+                  <span>Glassmorphism</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a class="project-link" href="#contact">
+                  Pratinjau Simulator <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- === 5. EXPERIENCE & JOURNEY SECTION === -->
+      <section class="experience-section" id="experience">
+        <div class="container">
+          <p class="eyebrow">git log --reverse --pretty=format:"%h - %cd : %s"</p>
+          <h2 class="section-title">Perjalanan & Rekam Jejak.</h2>
+          <p class="section-desc">
+            Riwayat pendidikan formal, partisipasi bootcamp, serta dedikasi dalam menempa kematangan teknis.
+          </p>
+
+          <div class="timeline">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item" style="--tl-accent: var(--gilang-accent)">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-meta">
+                  <span class="timeline-badge">Pendidikan Formal</span>
+                  <span class="timeline-date">2026 — Sekarang</span>
+                </div>
+                <h3>Mahasiswa Teknologi Rekayasa Perangkat Lunak (TRPL)</h3>
+                <div class="timeline-org">Universitas Pendidikan Ganesha (Undiksha)</div>
+                <p class="timeline-desc">
+                  Mendalami fondasi rekayasa perangkat lunak, algoritma pemrograman, perancangan basis data, paradigma berorientasi objek, serta arsitektur sistem berbasis web.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item" style="--tl-accent: var(--c0)">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-meta">
+                  <span class="timeline-badge">Bootcamp & Proyek Tim</span>
+                  <span class="timeline-date">2026</span>
+                </div>
+                <h3>Web Developer & Collaborator (Branch Team)</h3>
+                <div class="timeline-org">Integer IT Bootcamp</div>
+                <p class="timeline-desc">
+                  Berkolaborasi bersama anggota tim dalam mengonsep, menyusun struktur repositori bersama, mempraktikkan alur Git-flow, dan membangun website portofolio tim serta portofolio personal mandiri.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item" style="--tl-accent: var(--c3)">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-meta">
+                  <span class="timeline-badge">Pengembangan Mandiri</span>
+                  <span class="timeline-date">2025 — Sekarang</span>
+                </div>
+                <h3>Independent Web & Software Development</h3>
+                <div class="timeline-org">Personal Lab & Open Source Exploration</div>
+                <p class="timeline-desc">
+                  Secara konsisten menguji teknologi web baru, melatih pemecahan masalah algoritmis, merancang antarmuka dark-mode modern, dan membangun prototipe aplikasi fungsional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === 6. CONTACT SECTION === -->
+      <section class="contact-section" id="contact">
+        <div class="container">
+          <p class="eyebrow">git remote -v && ping contact</p>
+          <h2 class="section-title">Mari Terhubung & Berkolaborasi.</h2>
+          <p class="section-desc">
+            Punya ide proyek, diskusi teknis mengenai software engineering, atau tawaran kerja sama? Jangan ragu untuk menyapa!
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-cards">
+              <!-- Email Card -->
+              <a class="contact-card" href="mailto:gilang@example.com" id="copyEmailBtn" data-email="gilang@example.com">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                    <polyline points="3 7 12 13 21 7"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-label">Kirim Surel / Salin</div>
+                  <div class="contact-value">gilang@example.com</div>
+                </div>
+                <div class="contact-arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <!-- GitHub Card -->
+              <a class="contact-card" href="https://github.com/iLoveOrca1" target="_blank" rel="noopener noreferrer">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-label">Repositori Kode</div>
+                  <div class="contact-value">github.com/iLoveOrca1</div>
+                </div>
+                <div class="contact-arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <!-- Lokasi Card -->
+              <div class="contact-card" style="cursor: default;">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-label">Lokasi Domisili</div>
+                  <div class="contact-value">Bali, Indonesia</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Message Form -->
+            <div class="contact-form-box">
+              <h3>Kirim Pesan Singkat</h3>
+              <p>Tinggalkan pesan Anda di bawah ini, saya akan merespons secepatnya.</p>
+              <form id="contactForm">
+                <div class="form-group">
+                  <label class="form-label" for="formName">Nama Anda</label>
+                  <input class="form-input" type="text" id="formName" required placeholder="Contoh: Raka Satria" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="formEmail">Alamat Email</label>
+                  <input class="form-input" type="email" id="formEmail" required placeholder="nama@domain.com" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="formMessage">Pesan atau Diskusi</label>
+                  <textarea class="form-textarea" id="formMessage" required placeholder="Tuliskan pesan atau ide Anda..."></textarea>
+                </div>
+                <button class="btn accent form-submit" type="submit">Kirim Pesan</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- === FOOTER === -->
+    <footer>
+      <div class="container">
+        <span class="root-dot" aria-hidden="true"></span>
+        <span class="mono"><span class="hash">g114ng7</span> · branch-gilang ready</span>
+        <span>© <span id="year"></span> I Made Gilang Pradnyananda — Branch Team</span>
+      </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script src="../js/pages/gilang.js"></script>
+    <script src="../js/lib/particle/particle.js"></script>
+  </body>
+</html>

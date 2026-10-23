@@ -56,12 +56,23 @@
       <div class="bar" id="bar" aria-hidden="true"></div>
     </header>
 
+    <nav class="mm" aria-label="Peta halaman">
+      <div class="mm-line"></div>
+      <div class="mm-fill" id="mmFill"></div>
+      <div class="mm-branch" id="mmBranch"></div>
+      <a class="mm-node" href="#home"       style="top:0%"   data-label="f08a1c3 · beranda"    aria-label="Beranda"></a>
+      <a class="mm-node" href="#about"      style="top:50%"  data-label="2b7d9e5 · tentang"    aria-label="Tentang"></a>
+      <a class="mm-node" href="#our-team"     style="top:100%"  data-label="94c3a61 · skill"      aria-label="Skill"></a>
+    </nav>
+
     <main>
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
           <p class="term"><i>$</i> git log --graph</p>
-          <h1>Introducing <em>Branch</em> Team.</h1>
+          <h1>Introducing 
+            <em>Branch</em> 
+            Team.</h1>
           <p class="role-line"><span id="typed"></span><span class="caret" aria-hidden="true"></span></p>
           <p class="lead">Membangun situs web yang cepat, rapi, dan mudah dipakai, dari desain sampai rilis.</p>
           <div class="cta">
@@ -130,8 +141,10 @@
               <span class="member-commit mono">branch gilang</span>
             </div>
             <h3>I Made Gilang Pradnyananda</h3>
-            <p class="member-major">TRPL</p>
-            <span class="member-link member-coming-soon">Halaman segera hadir</span>
+            <p class="member-major">TRPL</p>  
+            <a class="member-link" href="./pages/gilang.html">
+              Buka profil <span aria-hidden="true">↗</span>
+            </a>
           </article>
 
           <article class="member-card" style="--member-accent:var(--c3)">
@@ -171,7 +184,6 @@
 
     </main>
 
-
     <footer>
       <div class="container">
         <span class="root-dot" aria-hidden="true"></span>
@@ -181,7 +193,6 @@
         <span>© <span id="year"></span> Branch Team - Integer IT Bootcamp</span>
       </div>
     </footer>
-
 
     <script type="module" src="js/main.js"></script>
     <script src="js/lib/particle/particle.js"></script>
