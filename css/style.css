@@ -1,5 +1,6 @@
 @import url('./components/navbar.css');
 @import url('./components/footer.css');
+@import url('./hero/hero.css');
 
 :root{
     /* Tema Warna*/
