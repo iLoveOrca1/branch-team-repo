@@ -32,7 +32,7 @@ body {
     background:radial-gradient(900px 500px at 10% -10%,#131b2e 0,transparent 70%),var(--bg);
     font:16px/1.6 'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
     padding-bottom:env(safe-area-inset-bottom,0px);
-    min-height: 200vh;
+    /* min-height: 200vh; */
 }
 
 a {
