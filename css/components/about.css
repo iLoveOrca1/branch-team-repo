@@ -1,0 +1,13 @@
+.about-section {
+  padding-top: 72px;
+}
+
+.about-grid {
+  max-width: 760px;
+}
+
+.about-copy {
+  max-width: 62ch;
+  margin-top: 18px;
+  color: #b9c3d6;
+}
